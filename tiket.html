@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pembelian Tiket - Museum Kayu & Kriya Ambar Polah</title>
+
+  <!-- Favicons -->
+  <link href="assets/img/favicon.png" rel="icon">
+  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <style>
+    body {
+      font-family: "Poppins", sans-serif;
+      background: #f9f9f9;
+      margin: 0;
+      padding: 0;
+      color: #333;
+      line-height: 1.6;
+      opacity: 0;
+      animation: fadeIn 1s forwards;
+      transition: background 0.3s, color 0.3s;
+    }
+
+    @keyframes fadeIn {
+      to {
+        opacity: 1;
+      }
+    }
+
+    header {
+      background: #5b3e1a;
+      color: #fff;
+      text-align: center;
+      padding: 40px 20px;
+      position: relative;
+    }
+
+    footer {
+      text-align: center;
+      padding: 15px;
+      background-color: #f2f2f2;
+      color: #777;
+      font-size: 14px;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 2rem;
+    }
+
+    header p {
+      margin-top: 10px;
+      opacity: 0.9;
+      max-width: 700px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    /* Translate Button */
+    #translateBtn {
+      position: absolute;
+      right: 20px;
+      top: 20px;
+      background: #d4a373;
+      color: #fff;
+      border: none;
+      padding: 8px 12px;
+      border-radius: 6px;
+      cursor: pointer;
+      font-weight: 500;
+      transition: 0.3s;
+    }
+
+    #translateBtn:hover {
+      background: #5b3e1a;
+    }
+
+    .container {
+      width: 92%;
+      max-width: 1150px;
+      margin: 30px auto;
+    }
+
+    .form-card {
+      background: #fffdf8;
+      border-radius: 12px;
+      padding: 25px;
+      border: 1px solid #e6d5bd;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+      margin-bottom: 25px;
+    }
+
+    .form-card h2 {
+      color: #5b3e1a;
+      margin-top: 0;
+    }
+
+    label {
+      display: block;
+      margin-top: 10px;
+      margin-bottom: 5px;
+      font-weight: 500;
+    }
+
+    input,
+    select {
+      width: 100%;
+      padding: 10px;
+      border-radius: 6px;
+      border: 1px solid #d4d4d4;
+      margin-bottom: 10px;
+      font-size: 15px;
+    }
+
+    .btn {
+      background: #5b3e1a;
+      color: #fff;
+      padding: 12px 24px;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      font-size: 15px;
+      margin-top: 10px;
+      transition: 0.3s;
+    }
+
+    .btn:hover {
+      background: #d4a373;
+      color: #2d2d2d;
+    }
+
+    .qris-box,
+    .success-box,
+    .booking-box {
+      background: #fffdf8;
+      border-radius: 12px;
+      padding: 20px;
+      border: 1px solid #e6d5bd;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+      margin-top: 25px;
+      text-align: center;
+      display: none;
+    }
+
+    .qr-placeholder {
+      width: 260px;
+      height: 260px;
+      background: #f2f2f2;
+      border: 2px dashed #c1c1c1;
+      border-radius: 12px;
+      margin: 15px auto;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #888;
+    }
+
+    .qr-ticket {
+      margin-top: 15px;
+    }
+
+    .btn-back {
+      display: block;
+      text-align: center;
+      background: #5b3e1a;
+      color: #fff;
+      text-decoration: none;
+      padding: 12px 24px;
+      margin: 40px auto;
+      width: fit-content;
+      border-radius: 6px;
+      font-weight: 500;
+      transition: 0.3s;
+    }
+
+    .btn-back:hover {
+      background: #d4a373;
+      color: #2d2d2d;
+    }
+
+    /* Dark Mode */
+    body.dark-mode {
+      background: #121212;
+      color: #e0e0e0;
+    }
+
+    body.dark-mode header {
+      background: #2c1e0e;
+    }
+
+    body.dark-mode .form-card,
+    body.dark-mode .qris-box,
+    body.dark-mode .success-box,
+    body.dark-mode .booking-box {
+      background: #1e1e1e;
+      border-color: #333;
+      box-shadow: 0 4px 12px rgba(255, 255, 255, 0.05);
+    }
+
+    body.dark-mode input,
+    body.dark-mode select {
+      background: #2a2a2a;
+      color: #e0e0e0;
+      border-color: #555;
+    }
+
+    body.dark-mode .btn,
+    body.dark-mode .btn-back {
+      background: #2c1e0e;
+    }
+
+    body.dark-mode .btn:hover,
+    body.dark-mode .btn-back:hover {
+      background: #d4a373;
+      color: #121212;
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <h1>Pembelian Tiket Museum</h1>
+    <p>Silakan isi form di bawah ini untuk membeli tiket Museum Kayu & Kriya Ambar Polah.</p>
+    <button id="translateBtn">ID ↔ EN</button>
+  </header>
+
+  <div class="container">
+
+    <!-- FORM PEMBELIAN -->
+    <div class="form-card">
+      <h2>Form Pembelian Tiket</h2>
+
+      <label>Nama Lengkap</label>
+      <input type="text" id="name" placeholder="Masukkan nama Anda">
+
+      <label>Email</label>
+      <input type="email" id="email" placeholder="example@email.com">
+
+      <label>Jenis Tiket</label>
+      <select id="ticketType">
+        <option value="reguler">TIKET REGULER — Rp 22.000</option>
+        <option value="pelajar">TIKET PELAJAR & MAHASISWA — Rp 17.000</option>
+      </select>
+
+      <div id="studentUpload" style="display:none;">
+        <label>Upload Bukti Kartu Pelajar/Mahasiswa (WAJIB)</label>
+        <input type="file" accept="image/*">
+      </div>
+
+      <label>Jumlah Tiket</label>
+      <input type="number" id="quantity" min="1" value="1">
+
+      <label>Total Harga</label>
+      <input type="text" id="total" readonly value="Rp 22.000">
+
+      <button class="btn" onclick="showQRIS()">Lanjut ke Pembayaran</button>
+    </div>
+
+    <!-- QRIS -->
+    <div class="qris-box" id="qrisSection">
+      <h2>Scan QRIS untuk Membayar</h2>
+      <div class="qr-placeholder">QRIS Akan Ditampilkan</div>
+      <button class="btn" onclick="confirmPayment()">Saya sudah scan QRIS</button>
+    </div>
+
+    <!-- SUCCESS -->
+    <div class="success-box" id="successSection">
+      <h2>Pembayaran Berhasil! Terima kasih telah membeli tiket.</h2>
+      <p>Konfirmasi admin otomatis melalui WhatsApp...</p>
+    </div>
+
+    <!-- BOOKING CODE -->
+    <div class="booking-box" id="bookingSection">
+      <h2>Kode Booking Anda</h2>
+      <h1 id="bookingCode"></h1>
+      <p>Tunjukkan QR Code ini saat masuk museum.</p>
+      <img id="ticketQR" class="qr-ticket" src="">
+      <a href="index.html" class="btn-back">← Kembali ke Beranda</a>
+    </div>
+
+  </div>
+
+  <footer>
+    © Museum Kayu & Kriya Ambar Polah 2025. All rights reserved.
+  </footer>
+
+  <script>
+    // Dark Mode toggle double-click header
+    document.querySelector('header').addEventListener('dblclick', () => {
+      document.body.classList.toggle('dark-mode');
+    });
+
+    // Translate Button
+    const translateBtn = document.getElementById('translateBtn');
+    let isEN = false;
+    translateBtn.addEventListener('click', () => {
+      isEN = !isEN;
+      if (isEN) {
+        document.querySelector('header h1').textContent = "Museum Ticket Purchase";
+        document.querySelector('header p').textContent =
+          "Please fill out the form below to purchase tickets for Museum Kayu & Kriya Ambar Polah.";
+        document.querySelector('.form-card h2').textContent = "Ticket Purchase Form";
+        document.querySelector('label[for="name"]').textContent = "Full Name";
+        document.querySelector('label[for="email"]').textContent = "Email";
+        document.querySelector('label[for="ticketType"]').textContent = "Ticket Type";
+        document.querySelector('label[for="quantity"]').textContent = "Quantity";
+        document.querySelector('label[for="total"]').textContent = "Total Price";
+        document.querySelector('.btn').textContent = "Proceed to Payment";
+        document.getElementById("qrisSection").querySelector("h2").textContent = "Scan QRIS to Pay";
+        document.getElementById("qrisSection").querySelector("button").textContent = "I have scanned QRIS";
+        document.getElementById("successSection").querySelector("h2").textContent =
+          "Payment Successful! Thank you for purchasing tickets.";
+        document.getElementById("bookingSection").querySelector("h2").textContent = "Your Booking Code";
+        document.getElementById("bookingSection").querySelector("p").textContent =
+          "Show this QR Code when entering the museum.";
+        document.querySelector('.btn-back').textContent = "← Back to Home";
+      } else {
+        location.reload();
+      }
+    });
+
+    // Hitung total otomatis
+    const ticketType = document.getElementById("ticketType");
+    const total = document.getElementById("total");
+    const quantity = document.getElementById("quantity");
+    const uploadBox = document.getElementById("studentUpload");
+
+    function updateTotal() {
+      let price = ticketType.value === "reguler" ? 22000 : 17000;
+      total.value = "Rp " + (price * quantity.value).toLocaleString("id-ID");
+    }
+
+    ticketType.addEventListener("change", () => {
+      uploadBox.style.display = ticketType.value === "pelajar" ? "block" : "none";
+      updateTotal();
+    });
+
+    quantity.addEventListener("input", updateTotal);
+
+    // Show QRIS
+    function showQRIS() {
+      document.getElementById("qrisSection").style.display = "block";
+      window.scrollTo(0, document.body.scrollHeight);
+    }
+
+    // Confirm Payment
+    function confirmPayment() {
+
+      document.getElementById("successSection").style.display = "block";
+
+      // Booking code
+      const booking = "AMB-" + Math.floor(100000 + Math.random() * 900000);
+      document.getElementById("bookingCode").innerText = booking;
+
+      // Generate QR ticket
+      document.getElementById("ticketQR").src =
+        "https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=" + booking;
+
+      // Show booking
+      setTimeout(() => {
+        document.getElementById("bookingSection").style.display = "block";
+        window.scrollTo(0, document.body.scrollHeight);
+      }, 1200);
+
+      // WhatsApp admin auto
+      let name = document.getElementById("name").value;
+      let email = document.getElementById("email").value;
+      let type = ticketType.value === "reguler" ? "Tiket Reguler" : "Tiket Pelajar/Mahasiswa";
+      let qty = quantity.value;
+      let msg =
+        `Konfirmasi Pembayaran Tiket Museum:%0A` +
+        `Nama: ${name}%0A` +
+        `Email: ${email}%0A` +
+        `Jenis Tiket: ${type}%0A` +
+        `Jumlah Tiket: ${qty}%0A` +
+        `Kode Booking: ${booking}%0A` +
+        `Saya sudah melakukan pembayaran (scan QRIS).`;
+
+      window.open("https://wa.me/6281283121925?text=" + msg, "_blank");
+    }
+  </script>
+
+</body>
+
+</html>

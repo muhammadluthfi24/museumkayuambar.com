@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Museum Kayu & Kriya Ambar Polah - Sejarah Lengkap</title>
+
+  <link href="assets/img/favicon.png" rel="icon">
+  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <style>
+    body {
+      font-family: "Poppins", sans-serif;
+      background: #f9f9f9;
+      margin: 0;
+      padding: 0;
+      color: #333;
+      line-height: 1.6;
+      transition: background 0.3s, color 0.3s;
+    }
+
+    header {
+      background: #5b3e1a;
+      color: #fff;
+      text-align: center;
+      padding: 40px 20px;
+      transition: background 0.3s, color 0.3s;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 2rem;
+    }
+
+    header p {
+      margin-top: 10px;
+      opacity: 0.9;
+      max-width: 700px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    header .btns {
+      margin-top: 12px;
+      display: flex;
+      justify-content: center;
+      gap: 12px;
+    }
+
+    header button {
+      padding: 8px 14px;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      font-weight: 500;
+    }
+
+    header #darkModeBtn {
+      background: #d4a373;
+    }
+
+    header #translateBtn {
+      background: #5b3e1a;
+      color: #fff;
+    }
+
+    .container {
+      width: 92%;
+      max-width: 1150px;
+      margin: 30px auto;
+      background: #fff;
+      border-radius: 14px;
+      padding: 30px;
+      box-shadow: 0 6px 22px rgba(0, 0, 0, 0.08);
+
+      opacity: 0;
+      transform: translateY(20px);
+      animation: fadeIn 0.8s ease-out forwards;
+      transition: background 0.3s, color 0.3s;
+    }
+
+    @keyframes fadeIn {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .meta {
+      color: #777;
+      font-size: 14px;
+      margin-bottom: 20px;
+    }
+
+    .section-title {
+      font-size: 26px;
+      margin-top: 30px;
+      margin-bottom: 16px;
+      color: #5b3e1a;
+    }
+
+    .hero-img {
+      width: 100%;
+      height: 300px;
+      object-fit: cover;
+      border-radius: 12px;
+      margin-bottom: 24px;
+    }
+
+    .history-cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 20px;
+      margin-top: 25px;
+    }
+
+    .card {
+      background: #fffdf8;
+      border-left: 5px solid #d9a86c;
+      padding: 18px;
+      border-radius: 12px;
+      box-shadow: 0 5px 14px rgba(0, 0, 0, 0.08);
+      transition: background 0.3s, color 0.3s;
+    }
+
+    .timeline {
+      margin-top: 40px;
+      border-left: 4px solid #d4a373;
+      padding-left: 24px;
+    }
+
+    .tl-item {
+      margin-bottom: 24px;
+    }
+
+    .tl-year {
+      font-weight: bold;
+      font-size: 19px;
+      color: #5b3e1a;
+    }
+
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 16px;
+      margin-top: 25px;
+    }
+
+    .gallery img {
+      width: 100%;
+      height: 170px;
+      object-fit: cover;
+      border-radius: 10px;
+      box-shadow: 0 4px 14px rgba(0, 0, 0, 0.15);
+      cursor: pointer;
+      transition: transform 0.2s;
+    }
+
+    .gallery img:hover {
+      transform: scale(1.03);
+    }
+
+    .btn-back {
+      display: block;
+      text-align: center;
+      background: #5b3e1a;
+      color: #fff;
+      text-decoration: none;
+      padding: 12px 24px;
+      margin: 40px auto;
+      width: fit-content;
+      border-radius: 6px;
+      font-weight: 500;
+      transition: 0.3s, background 0.3s, color 0.3s;
+    }
+
+    .btn-back:hover {
+      background: #d4a373;
+      color: #2d2d2d;
+    }
+
+    /* LIGHTBOX */
+    .lightbox-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.85);
+      display: none;
+      justify-content: center;
+      align-items: center;
+      z-index: 9999;
+    }
+
+    .lightbox-overlay img {
+      max-width: 90%;
+      max-height: 90%;
+      border-radius: 10px;
+    }
+
+    /* DARK MODE */
+    body.dark-mode {
+      background: #1e1e1e;
+      color: #ddd;
+    }
+
+    body.dark-mode header {
+      background: #2b2b2b;
+      color: #fff;
+    }
+
+    body.dark-mode .container,
+    body.dark-mode .card {
+      background: #2c2c2c;
+      color: #ddd;
+      border-color: #555;
+    }
+
+    footer {
+      text-align: center;
+      padding: 15px;
+      background-color: #f2f2f2;
+      color: #777;
+      font-size: 14px;
+    }
+
+    body.dark-mode .btn-back {
+      background: #444;
+      color: #fff;
+    }
+
+    body.dark-mode .btn-back:hover {
+      background: #d4a373;
+      color: #2d2d2d;
+    }
+
+    body.dark-mode .gallery img {
+      filter: brightness(0.9);
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <h1 data-id="Sejarah Lengkap Museum Kayu & Kriya Ambar Polah">Sejarah Lengkap Museum Kayu & Kriya Ambar Polah</h1>
+    <p data-id="Pusat perjalanan panjang pelestarian seni kayu dan kriya Nusantara">
+      Pusat perjalanan panjang pelestarian seni kayu dan kriya Nusantara
+    </p>
+    <div class="btns">
+      <button id="darkModeBtn">Dark Mode</button>
+      <button id="translateBtn">Translate EN</button>
+    </div>
+  </header>
+
+  <div class="container">
+    <h2 data-id="Sejarah Singkat">Sejarah Singkat</h2>
+    <div class="meta">administrators • 12 Februari 2024 • 00:00:00 • 72889</div>
+
+    <img src="assets/img/portfolio/pengujung4.jpg" alt="Museum Kayu" class="hero-img" />
+
+    <h1 class="section-title" data-id="Asal-usul dan Perkembangan Museum">Asal-usul dan Perkembangan Museum</h1>
+
+    <p>Museum Kayu dan Kriya "Ambar Polah" telah mengawali cita-cita berdiri sebagai museum sejak tahun 1986 dari alm.
+      Bapak Ambar Polah Tjahyono dan ibu Mursupriyani. Semula museum ini adalah salah satu rumah koleksi sebelum
+      ditempatkan menjadi museum kayu dan kriya di Kabupaten Kulonprogo, pada tahun 2025.</p>
+
+    <p>Sebagai kolektor, <strong>Bapak Ambar Polah bersama Ibu Mursupriyani</strong>, memiliki keinginan menjaga ragam
+      koleksi benda "Javanese Antique Furniture" yang diperoleh melalui proses pengkoleksian yang sangat panjang.
+      Penantian serta keinginan alm. Bapak Ambar Polah Tjahyono untuk menempatkan koleksinya sebagai museum pribadi bagi
+      masyarakat, pada akhirnya dapat diwujudkan oleh Ibu Mursupriyani, melalui proses kurasi benda koleksi.</p>
+
+    <!-- HISTORY CARDS -->
+    <h2 class="section-title" data-id="Pokok Sejarah dalam Sorotan">Pokok Sejarah dalam Sorotan</h2>
+    <div class="history-cards">
+      <div class="card">
+        <h3 data-id="Awal Cita-Cita (1986)">Awal Cita-Cita (1986)</h3>
+        <p>Gagasan pendirian museum pertama kali tumbuh pada tahun 1986 melalui alm. Bapak Ambar Polah Tjahyono dan Ibu
+          Mursupriyani, yang memiliki kecintaan mendalam terhadap seni dan kriya kayu Jawa.</p>
+      </div>
+      <div class="card">
+        <h3 data-id="Rumah Koleksi Pribadi">Rumah Koleksi Pribadi</h3>
+        <p>Sebelum menjadi museum, seluruh benda koleksi disimpan di rumah koleksi keluarga, sebagai upaya awal
+          pelestarian warisan budaya berupa Javanese Antique Furniture.</p>
+      </div>
+      <div class="card">
+        <h3 data-id="Koleksi yang Dihimpun Bertahun-tahun">Koleksi yang Dihimpun Bertahun-tahun</h3>
+        <p>Sebagai kolektor, Bapak Ambar Polah mengumpulkan beragam furnitur kayu Jawa antik melalui proses yang
+          panjang, teliti, dan penuh dedikasi.</p>
+      </div>
+      <div class="card">
+        <h3 data-id="Terwujudnya Museum (2025)">Terwujudnya Museum (2025)</h3>
+        <p>Keinginan almarhum untuk menjadikan koleksi tersebut sebagai museum bagi masyarakat akhirnya diwujudkan oleh
+          Ibu Mursupriyani pada tahun 2025, melalui proses kurasi dan penataan koleksi yang terstruktur.</p>
+      </div>
+    </div>
+
+    <!-- TIMELINE -->
+    <h2 class="section-title" data-id="Timeline Perkembangan">Timeline Perkembangan</h2>
+    <div class="timeline">
+      <div class="tl-item">
+        <div class="tl-year">1986 – Gagasan Awal Museum</div>
+        <p>Alm. Bapak Ambar Polah Tjahyono dan Ibu Mursupriyani mulai memiliki cita-cita mendirikan museum koleksi kayu
+          dan kriya Jawa.</p>
+      </div>
+      <div class="tl-item">
+        <div class="tl-year">1986–2024 – Proses Pengkoleksian</div>
+        <p>Bapak Ambar Polah menghimpun ragam <strong>Javanese Antique Furniture</strong> melalui proses panjang,
+          teliti, dan penuh dedikasi.</p>
+      </div>
+      <div class="tl-item">
+        <div class="tl-year">2024 – Tahap Kurasi Koleksi</div>
+        <p>Ibu Mursupriyani memulai proses kurasi koleksi setelah wafatnya Bapak Ambar Polah.</p>
+      </div>
+      <div class="tl-item">
+        <div class="tl-year">2025 – Perwujudan Museum</div>
+        <p>Museum Kayu & Kriya resmi diwujudkan sebagai museum pribadi terbuka untuk publik.</p>
+      </div>
+    </div>
+
+    <!-- PHOTO GALLERY -->
+    <h2 class="section-title" data-id="Galeri Foto">Galeri Foto</h2>
+    <div class="gallery">
+      <img src="assets/img/portfolio/sangkut paring.jpg" alt="Kayu 1" />
+      <img src="assets/img/portfolio/wayang golek.jpg" alt="Kayu 2" />
+      <img src="assets/img/portfolio/portfolio-portrait-12.webp.jpg" alt="Kayu 3" />
+      <img src="assets/img/portfolio/singa.png" alt="Kayu 4" />
+    </div>
+  </div>
+
+  <a href="index.html" class="btn-back" data-id="← Kembali ke Beranda">← Kembali ke Beranda</a>
+
+  <footer>
+    © Museum Kayu & Kriya Ambar Polah 2025. All rights reserved.
+  </footer>
+
+  <!-- LIGHTBOX -->
+  <div class="lightbox-overlay" id="lightbox">
+    <img id="lightbox-img" src="" alt="preview" />
+  </div>
+
+  <script>
+    // Lightbox
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImg = document.getElementById('lightbox-img');
+    document.querySelectorAll('.gallery img').forEach(img => {
+      img.addEventListener('click', () => {
+        lightboxImg.src = img.src;
+        lightbox.style.display = 'flex';
+      });
+    });
+    lightbox.addEventListener('click', () => {
+      lightbox.style.display = 'none';
+    });
+
+    // Dark Mode toggle
+    const darkModeBtn = document.getElementById('darkModeBtn');
+    darkModeBtn.addEventListener('click', () => {
+      document.body.classList.toggle('dark-mode');
+      darkModeBtn.textContent = document.body.classList.contains('dark-mode') ? "Light Mode" : "Dark Mode";
+    });
+
+    // Translate ID ↔ EN
+    const textMap = {
+      "Sejarah Lengkap Museum Kayu & Kriya Ambar Polah": "Full History of Ambar Polah Wood & Craft Museum",
+      "Pusat perjalanan panjang pelestarian seni kayu dan kriya Nusantara": "A long journey of wood art and craft preservation in Nusantara",
+      "Sejarah Singkat": "Brief History",
+      "Asal-usul dan Perkembangan Museum": "Origins and Development of the Museum",
+      "Pokok Sejarah dalam Sorotan": "History Highlights",
+      "Awal Cita-Cita (1986)": "Initial Idea (1986)",
+      "Rumah Koleksi Pribadi": "Private Collection House",
+      "Koleksi yang Dihimpun Bertahun-tahun": "Collection Gathered Over Years",
+      "Terwujudnya Museum (2025)": "Museum Realization (2025)",
+      "Timeline Perkembangan": "Development Timeline",
+      "Galeri Foto": "Photo Gallery",
+      "← Kembali ke Beranda": "← Back to Home"
+    };
+    let isEnglish = false;
+    const translateBtn = document.getElementById('translateBtn');
+    translateBtn.addEventListener('click', () => {
+      document.querySelectorAll('[data-id]').forEach(el => {
+        const key = el.getAttribute('data-id');
+        el.textContent = !isEnglish ? (textMap[key] || el.textContent) : key;
+      });
+      isEnglish = !isEnglish;
+      translateBtn.textContent = isEnglish ? "Translate ID" : "Translate EN";
+    });
+  </script>
+
+</body>
+
+</html>

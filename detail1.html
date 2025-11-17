@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Detail Berita Panjang | Museum Kayu & Kriya Ambar Polah</title>
+
+  <!-- Favicons -->
+  <link href="assets/img/favicon.png" rel="icon">
+  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <style>
+    body {
+      font-family: "Poppins", sans-serif;
+      background: #f9f9f9;
+      margin: 0;
+      color: #333;
+      line-height: 1.7;
+      opacity: 0;
+      animation: fadeIn 1s forwards;
+      transition: background 0.3s, color 0.3s;
+    }
+
+    @keyframes fadeIn {
+      to {
+        opacity: 1;
+      }
+    }
+
+    header {
+      background-color: #5b3e1a;
+      color: #fff;
+      padding: 25px 20px;
+      text-align: center;
+      position: relative;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 2rem;
+    }
+
+    nav {
+      margin-top: 10px;
+    }
+
+    nav a {
+      color: #fff;
+      margin: 0 10px;
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    nav a:hover {
+      text-decoration: underline;
+    }
+
+    #translateBtn {
+      position: absolute;
+      right: 20px;
+      top: 20px;
+      background: #d4a373;
+      color: #fff;
+      border: none;
+      padding: 8px 12px;
+      border-radius: 6px;
+      cursor: pointer;
+      font-weight: 500;
+      transition: 0.3s;
+    }
+
+    #translateBtn:hover {
+      background: #5b3e1a;
+    }
+
+    .container {
+      width: 92%;
+      max-width: 900px;
+      margin: 40px auto;
+    }
+
+    .detail-berita img.main-img {
+      width: 100%;
+      max-height: 450px;
+      object-fit: cover;
+      border-radius: 12px;
+      margin-bottom: 20px;
+    }
+
+    .detail-berita h2 {
+      color: #5b3e1a;
+      margin-bottom: 5px;
+    }
+
+    .meta-info {
+      font-size: 14px;
+      color: #a36d45;
+      margin-bottom: 15px;
+    }
+
+    .detail-berita h3 {
+      color: #4b2c20;
+      margin-top: 20px;
+      margin-bottom: 10px;
+    }
+
+    .detail-berita p {
+      margin-bottom: 15px;
+      text-align: justify;
+    }
+
+    blockquote {
+      background: #fff4e6;
+      border-left: 5px solid #d9a86c;
+      padding: 10px 20px;
+      margin: 20px 0;
+      font-style: italic;
+      color: #5b3e1a;
+    }
+
+    ul {
+      margin-left: 20px;
+      margin-bottom: 15px;
+    }
+
+    ul li {
+      margin-bottom: 8px;
+    }
+
+    .btn {
+      display: inline-block;
+      text-decoration: none;
+      background: #5b3e1a;
+      color: #fff;
+      padding: 10px 20px;
+      border-radius: 6px;
+      transition: 0.3s;
+      margin-top: 20px;
+    }
+
+    .btn:hover {
+      background: #d4a373;
+      color: #2d2d2d;
+    }
+
+    footer {
+      text-align: center;
+      padding: 15px;
+      background-color: #f2f2f2;
+      color: #777;
+      font-size: 14px;
+      margin-top: 40px;
+    }
+
+    /* Dark Mode */
+    body.dark-mode {
+      background-color: #121212;
+      color: #e0e0e0;
+    }
+
+    body.dark-mode header {
+      background-color: #2c1e0e;
+    }
+
+    body.dark-mode .detail-berita h2,
+    body.dark-mode .detail-berita h3,
+    body.dark-mode .detail-berita p,
+    body.dark-mode blockquote,
+    body.dark-mode ul li {
+      color: #e0e0e0;
+    }
+
+    body.dark-mode .btn {
+      background-color: #2c1e0e;
+      color: #fff;
+    }
+
+    body.dark-mode .btn:hover {
+      background-color: #d4a373;
+      color: #121212;
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <h1>Berita Museum</h1>
+    <nav>
+      <a href="index.html">Beranda</a>
+      <a href="#about">Tentang</a>
+      <a href="berita.html">Berita</a>
+    </nav>
+    <button id="translateBtn">ID ↔ EN</button>
+  </header>
+
+  <div class="container">
+    <section class="detail-berita">
+      <article>
+        <img src="assets/img/portfolio/pengujung2.jpg" alt="Pameran Kayu Nusantara" class="main-img">
+        <h2>Ramai Pengunjung! Museum Kayu & Kriya Ambar Polah Jadi Destinasi Seni Favorit</h2>
+        <div class="meta-info">14 November 2025 | Penulis: Admin Museum</div>
+
+
+        <p>Jakarta, 15 November 2025 – Antusiasme pengunjung memadati <span class="highlight">Museum Kayu & Kriya Ambar
+            Polah</span> sejak hari pertama dibuka. Dari keluarga, pelajar, hingga turis, semua berbondong-bondong ingin
+          menyaksikan keindahan koleksi kayu dan kriya yang memukau. Museum ini dengan cepat menjadi pusat perhatian,
+          menarik minat masyarakat yang ingin menyelami sejarah, seni, dan budaya Indonesia melalui medium kayu dan
+          kerajinan tangan.</p>
+
+        <p>Didirikan oleh <span class="highlight">Mursupriyanl</span>, museum ini memulai perjalanan konsepnya sejak
+          tahun 1986. Dengan visi untuk melestarikan seni kriya kayu Indonesia, museum ini kini menjadi rumah bagi
+          ratusan koleksi antik dan modern yang menggambarkan kekayaan budaya nusantara. Setiap karya memiliki cerita
+          unik, mulai dari ukiran tradisional yang diwariskan turun-temurun, hingga inovasi kriya kontemporer yang
+          memadukan kreativitas modern dengan kearifan lokal.</p>
+
+        <h2>Koleksi dan Pameran</h2>
+        <p>Pengunjung akan menemukan berbagai koleksi menarik, termasuk:</p>
+        <ul>
+          <li><strong>Ukiran Kayu Klasik:</strong> Karya-karya tradisional yang memukau dengan detail halus dan filosofi
+            mendalam.</li>
+          <li><strong>Perabot Antik:</strong> Meja, kursi, dan lemari yang telah ada sejak puluhan tahun lalu,
+            menunjukkan keahlian pengerjaan kayu yang tinggi.</li>
+          <li><strong>Kriya Modern:</strong> Inovasi kerajinan kayu kontemporer yang memadukan seni modern dan budaya
+            lokal.</li>
+          <li><strong>Spot Instagramable:</strong> Area khusus dengan instalasi seni yang siap menjadi latar foto
+            pengunjung.</li>
+        </ul>
+
+        <p>Setiap sudut museum dirancang agar pengunjung tidak hanya melihat karya seni, tetapi juga merasakan cerita di
+          balik setiap benda. “Senang sekali melihat antusiasme masyarakat. Museum ini bukan hanya tempat pameran, tapi
+          juga ruang edukasi dan inspirasi bagi semua umur,” ujar <span class="highlight">Mursupriyanl</span>.</p>
+
+        <h2>Kegiatan Interaktif</h2>
+        <p>Museum tidak hanya menyajikan koleksi statis. Pengunjung dapat terlibat langsung melalui berbagai kegiatan
+          interaktif, seperti:</p>
+        <ul>
+          <li><strong>Workshop Kerajinan Tangan:</strong> Belajar membuat ukiran dan kerajinan kayu secara langsung dari
+            para pengrajin.</li>
+          <li><strong>Demo Pembuatan Ukiran:</strong> Menyaksikan proses pembuatan karya seni secara live, dari kayu
+            mentah hingga menjadi karya jadi.</li>
+          <li><strong>Tur Edukatif:</strong> Khusus bagi pelajar dan anak-anak, untuk memahami sejarah dan proses
+            kreatif kriya kayu.</li>
+        </ul>
+
+        <h2>Suasana dan Pengalaman Pengunjung</h2>
+        <p>Suasana museum begitu hidup. Pengunjung tampak antusias mengamati setiap detail karya, berdiskusi dengan
+          pemandu, dan berfoto di spot-spot menarik. Banyak keluarga dan pelajar memanfaatkan kesempatan ini untuk
+          belajar sambil bersenang-senang. Keberadaan workshop dan demo langsung membuat pengalaman berkunjung semakin
+          lengkap dan berkesan.</p>
+
+        <h2>Jam Kunjungan</h2>
+        <ul>
+          <li>Senin–Kamis: 08.00–20.00 WIB</li>
+          <li>Jumat–Minggu: 08.00–21.00 WIB</li>
+        </ul>
+
+        <p>Dengan tiket masuk yang terjangkau dan suasana yang hangat, <span class="highlight">Museum Kayu & Kriya Ambar
+            Polah</span> telah menjadi destinasi seni favorit baru di Jakarta. Bagi pecinta seni, keluarga, atau pelajar
+          yang ingin mendapatkan pengalaman edukatif dan inspiratif, museum ini menjadi pilihan yang tidak boleh
+          dilewatkan. Segera kunjungi dan rasakan sendiri pesona dunia kriya dan keindahan seni kayu Indonesia!</p>
+
+        <blockquote>“Museum ini adalah jendela budaya, tempat di mana seni, tradisi, dan inovasi bertemu. Setiap
+          pengunjung bisa membawa pulang pengalaman tak terlupakan,” tambah <span class="highlight">Mursupriyanl</span>.
+        </blockquote>
+
+
+        <img src="assets/img/portfolio/pengujung1.jpg" alt="Workshop Kayu"
+          style="width:100%;border-radius:12px;margin:20px 0;">
+
+        <div class="penutup">
+          Jangan lewatkan kesempatan untuk mengunjungi <span class="highlight">Museum Kayu & Kriya Ambar Polah</span>.
+          Rasakan keindahan karya seni, belajar tentang tradisi kriya Indonesia, dan abadikan momen tak terlupakan Anda
+          di setiap sudut museum!
+        </div>
+
+        <a href="berita.html" class="btn">← Kembali ke Berita</a>
+      </article>
+    </section>
+  </div>
+
+  <footer>
+    © Museum Kayu & Kriya Ambar Polah 2025. All rights reserved.
+  </footer>
+
+  <script>
+    // Dark Mode toggle double-click header
+    document.querySelector('header').addEventListener('dblclick', () => {
+      document.body.classList.toggle('dark-mode');
+    });
+
+    // Translate Button
+    const translateBtn = document.getElementById('translateBtn');
+    let isEN = false;
+    translateBtn.addEventListener('click', () => {
+      isEN = !isEN;
+      if (isEN) {
+        document.querySelector('header h1').textContent = "Museum News";
+        document.querySelector('nav a:nth-child(1)').textContent = "Home";
+        document.querySelector('nav a:nth-child(2)').textContent = "About";
+        document.querySelector('nav a:nth-child(3)').textContent = "News";
+        document.querySelector('.detail-berita h2').textContent = "Nusantara Wood Exhibition Officially Opened";
+        document.querySelector('.meta-info').textContent = "November 3, 2025 | Author: Museum Admin";
+        document.querySelectorAll('.detail-berita p')[0].textContent =
+          "The Museum Kayu & Kriya Ambar Polah officially opened the exhibition titled 'Nusantara Wood Crafts' showcasing the beauty of carvings, sculptures, and wooden artworks from all over Indonesia. Visitors can enjoy more than 100 wooden artworks combining traditional values with modern innovation.";
+        document.querySelectorAll('.detail-berita h3')[0].textContent = "Interaction with Artisans";
+        document.querySelectorAll('.detail-berita p')[1].textContent =
+          "The exhibition features interactive sessions with local artisans. Visitors can learn carving and woodcraft techniques while understanding the philosophy behind each piece.";
+        document.querySelector('blockquote').textContent =
+          "\"Woodcraft art is a bridge between tradition and innovation. Each carving tells a story of Nusantara culture.\" – Museum Curator";
+        document.querySelectorAll('.detail-berita h3')[1].textContent = "Featured Collections";
+        document.querySelectorAll('ul li')[0].textContent = "18th-century wooden statues from Central Java";
+        document.querySelectorAll('ul li')[1].textContent = "Traditional masks from Bali and Sumatra";
+        document.querySelectorAll('ul li')[2].textContent = "Antique furniture made of teak and sonokeling";
+        document.querySelectorAll('ul li')[3].textContent = "Contemporary modern woodcraft installations";
+        document.querySelectorAll('.detail-berita h3')[2].textContent = "Exhibition Details";
+        document.querySelectorAll('.detail-berita p')[2].textContent =
+          "The event runs until December 10, 2025, in the main hall of Museum Ambar Polah. The exhibition is open to the public, and visitors are encouraged to book tickets online to avoid long queues.";
+        document.querySelectorAll('.detail-berita p')[3].textContent =
+          "Besides the exhibition, the museum also hosts wood carving workshops for children and adults. This activity is a major attraction for families and students.";
+        document.querySelector('.btn').textContent = "← Back to News";
+      } else {
+        location.reload();
+      }
+    });
+  </script>
+
+</body>
+
+</html>

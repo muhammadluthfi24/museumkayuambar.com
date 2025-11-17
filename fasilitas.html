@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Fasilitas Museum - Ambar Polah</title>
+
+  <style>
+    body {
+      font-family: "Poppins", sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #f8f5f0;
+      color: #333;
+      transition: 0.3s;
+    }
+
+    /* DARK MODE */
+    body.dark {
+      background: #1a1a1a;
+      color: #eaeaea;
+    }
+
+    header {
+      background: #5b3e1a;
+      color: #fff;
+      text-align: center;
+      padding: 40px 20px;
+      position: relative;
+    }
+
+    /* Toggle buttons */
+    .top-controls {
+      display: flex;
+      gap: 10px;
+      position: absolute;
+      top: 20px;
+      right: 20px;
+    }
+
+    .toggle-btn {
+      background: #fff;
+      border: none;
+      padding: 8px 16px;
+      font-weight: 600;
+      cursor: pointer;
+      border-radius: 6px;
+    }
+
+    .toggle-btn:hover {
+      background: #d4a373;
+      color: #000;
+    }
+
+    body.dark .toggle-btn {
+      background: #333;
+      color: #fff;
+    }
+
+    .container {
+      width: 92%;
+      max-width: 1150px;
+      margin: 30px auto;
+    }
+
+    .section-title {
+      font-size: 26px;
+      font-weight: 600;
+      color: #5b3e1a;
+      border-left: 5px solid #d9a86c;
+      padding-left: 14px;
+      margin-bottom: 20px;
+    }
+
+    body.dark .section-title {
+      color: #e6d5bd;
+      border-left-color: #bd9450;
+    }
+
+    /* GRID */
+    .facility-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 20px;
+    }
+
+    /* CARD */
+    .facility-card {
+      background: #fff;
+      border-radius: 14px;
+      padding: 20px;
+      border: 1px solid #e6d5bd;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+      transition: 0.3s;
+      cursor: pointer;
+      opacity: 0;
+      transform: translateY(20px);
+      animation: fadein 0.8s forwards;
+    }
+
+    body.dark .facility-card {
+      background: #2a2a2a;
+      border-color: #3a3a3a;
+    }
+
+    .facility-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+    }
+
+    @keyframes fadein {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .facility-card img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+      border-radius: 10px;
+      margin-bottom: 15px;
+      border: 1px solid #e8d8c1;
+    }
+
+    /* POPUP MODAL */
+    .modal {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.6);
+      backdrop-filter: blur(3px);
+      justify-content: center;
+      align-items: center;
+      padding: 20px;
+      z-index: 99;
+    }
+
+    .modal-content {
+      background: #fff;
+      padding: 25px;
+      border-radius: 14px;
+      max-width: 500px;
+      width: 100%;
+      animation: popup 0.3s ease;
+    }
+
+    body.dark .modal-content {
+      background: #2a2a2a;
+      color: #fff;
+    }
+
+    @keyframes popup {
+      from {
+        transform: scale(0.8);
+      }
+
+      to {
+        transform: scale(1);
+      }
+    }
+
+    .close-btn {
+      background: #5b3e1a;
+      color: #fff;
+      border: none;
+      padding: 8px 16px;
+      margin-top: 20px;
+      cursor: pointer;
+      border-radius: 6px;
+    }
+
+    footer {
+      text-align: center;
+      padding: 15px;
+      background-color: #f2f2f2;
+      color: #777;
+      font-size: 14px;
+    }
+
+    /* BACK BUTTON */
+    .btn-back {
+      display: block;
+      margin: 45px auto;
+      background: #5b3e1a;
+      color: #fff;
+      padding: 12px 24px;
+      text-decoration: none;
+      border-radius: 6px;
+      font-weight: 500;
+      width: fit-content;
+      transition: 0.3s;
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <h1 id="title">Fasilitas Museum</h1>
+    <p id="subtitle">Daftar lengkap fasilitas dan ruangan Museum Kayu & Kriya Ambar Polah.</p>
+
+    <div class="top-controls">
+      <button class="toggle-btn" onclick="toggleDark()">🌙/☀️</button>
+      <button class="toggle-btn" onclick="toggleLang()">ID/EN</button>
+    </div>
+  </header>
+
+  <div class="container">
+
+    <h2 class="section-title" id="sectionTitle">Fasilitas & Ruangan Museum</h2>
+
+    <div class="facility-grid" id="facilityGrid">
+
+      <!-- Cards generated dynamically -->
+
+    </div>
+
+  </div>
+
+  <a href="index.html" class="btn-back">← Kembali ke Beranda</a>
+  <footer>
+    © Museum Kayu & Kriya Ambar Polah 2025. All rights reserved.
+  </footer>
+  <!-- MODAL -->
+  <div class="modal" id="modal">
+    <div class="modal-content">
+      <h2 id="modalTitle"></h2>
+      <p id="modalDesc"></p>
+      <button class="close-btn" onclick="closeModal()">Tutup</button>
+    </div>
+  </div>
+
+  <script>
+    const dataID = [{
+        name: "Joglo Utama",
+        img: "assets/img/portfolio/gambar_joglo_utama.jpg",
+        desc: "Bangunan utama untuk tamu dan pameran awal."
+      },
+      {
+        name: "Ruang Ambar",
+        img: "assets/img/portfolio/gambar_ruang_ambar.jpg",
+        desc: "Ruang multifungsi untuk kegiatan besar."
+      },
+      {
+        name: "Ruang Bismo",
+        img: "assets/img/portfolio/gambar_ruang_bismo.jpg",
+        desc: "Ruang pertemuan dengan kapasitas menengah."
+      },
+      {
+        name: "Ruang Shinta",
+        img: "assets/img/portfolio/gambar_ruang_shinta.jpg",
+        desc: "Ruang diskusi dan kelas kecil."
+      },
+      {
+        name: "Ruang Raya",
+        img: "assets/img/portfolio/gambar_ruang_raya.jpg",
+        desc: "Tempat kegiatan seni dan edukasi publik."
+      },
+      {
+        name: "Ruang Workshop",
+        img: "assets/img/portfolio/gambar_workshop.jpg",
+        desc: "Tempat pelatihan kriya dan praktik langsung."
+      },
+      {
+        name: "Parkiran",
+        img: "assets/img/portfolio/gambar_parkiran.jpg",
+        desc: "Area parkir luas untuk kendaraan."
+      },
+      {
+        name: "Kamar Mandi",
+        img: "gambar_kamar_mandi.jpg",
+        desc: "Fasilitas sanitasi nyaman dan bersih."
+      },
+      {
+        name: "Mushola",
+        img: "assets/img/portfolio/gambar_mushola.jpg",
+        desc: "Tempat ibadah yang tenang bagi pengunjung."
+      },
+      {
+        name: "Cafe Shop",
+        img: "assets/img/portfolio/gambar_cafe_shop.jpg",
+        desc: "Tempat menikmati makanan dan minuman."
+      }
+    ];
+
+    const dataEN = [{
+        name: "Main Joglo Hall",
+        img: "gambar_joglo_utama.jpg",
+        desc: "Main reception and introductory gallery hall."
+      },
+      {
+        name: "Ambar Room",
+        img: "gambar_ruang_ambar.jpg",
+        desc: "A multifunction hall for large activities."
+      },
+      {
+        name: "Bismo Room",
+        img: "gambar_ruang_bismo.jpg",
+        desc: "A meeting room with medium capacity."
+      },
+      {
+        name: "Shinta Room",
+        img: "gambar_ruang_shinta.jpg",
+        desc: "A small room for classes and discussions."
+      },
+      {
+        name: "Raya Room",
+        img: "gambar_ruang_raya.jpg",
+        desc: "Public space for cultural and art programs."
+      },
+      {
+        name: "Workshop Room",
+        img: "assets/img/portfolio/gambar_workshop.jpg",
+        desc: "Hands-on craft training and making area."
+      },
+      {
+        name: "Parking Area",
+        img: "gambar_parkiran.jpg",
+        desc: "Spacious parking area for vehicles."
+      },
+      {
+        name: "Restroom",
+        img: "gambar_kamar_mandi.jpg",
+        desc: "Clean and accessible sanitation facilities."
+      },
+      {
+        name: "Prayer Room",
+        img: "gambar_mushola.jpg",
+        desc: "A peaceful place for worship."
+      },
+      {
+        name: "Cafe Shop",
+        img: "gambar_cafe_shop.jpg",
+        desc: "A place to enjoy drinks and snacks."
+      }
+    ];
+
+    let lang = "ID";
+
+    function renderCards() {
+      const grid = document.getElementById("facilityGrid");
+      grid.innerHTML = "";
+
+      const list = lang === "ID" ? dataID : dataEN;
+
+      list.forEach((item, i) => {
+        const card = document.createElement("div");
+        card.className = "facility-card";
+        card.innerHTML = `
+          <img src="${item.img}">
+          <h3>${item.name}</h3>
+          <p>${item.desc}</p>
+        `;
+        card.onclick = () => openModal(item.name, item.desc);
+        grid.appendChild(card);
+      });
+    }
+
+    renderCards();
+
+    function toggleDark() {
+      document.body.classList.toggle("dark");
+    }
+
+    function toggleLang() {
+      lang = lang === "ID" ? "EN" : "ID";
+      document.getElementById("title").textContent = lang === "ID" ? "Denah Fasilitas Museum" : "Museum Facility Map";
+      document.getElementById("subtitle").textContent = lang === "ID" ? "Daftar lengkap fasilitas dan ruangan museum." :
+        "Complete list of museum spaces and facilities.";
+      document.getElementById("sectionTitle").textContent = lang === "ID" ? "Fasilitas & Ruangan Museum" :
+        "Museum Facilities & Rooms";
+      renderCards();
+    }
+
+    function openModal(title, desc) {
+      document.getElementById("modalTitle").textContent = title;
+      document.getElementById("modalDesc").textContent = desc;
+      document.getElementById("modal").style.display = "flex";
+    }
+
+    function closeModal() {
+      document.getElementById("modal").style.display = "none";
+    }
+  </script>
+
+</body>
+
+</html>

@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Profil Museum Kayu & Kriya Ambar Polah</title>
+
+<style>
+    body {
+        font-family: "Poppins", sans-serif;
+        margin: 0;
+        background: #f5f5f5;
+        color: #222;
+        transition: 0.3s;
+    }
+
+    body.dark {
+        background: #121212;
+        color: #eaeaea;
+    }
+
+    header {
+        background: #744f28;
+        color: white;
+        padding: 28px;
+        text-align: center;
+        font-size: 22px;
+        font-weight: 700;
+    }
+
+    .tools {
+        display: flex;
+        justify-content: center;
+        gap: 15px;
+        margin: 20px auto;
+    }
+
+    button {
+        padding: 10px 18px;
+        border-radius: 8px;
+        border: none;
+        cursor: pointer;
+        font-weight: 600;
+    }
+
+    .translate-btn { background: #007bff; color: white; }
+    .dark-btn { background: #2f2f2f; color: white; }
+
+    .container {
+        width: 92%;
+        max-width: 1150px;
+        margin: auto;
+        padding-bottom: 50px;
+    }
+
+    h2 {
+        font-size: 22px;
+        margin-bottom: 12px;
+    }
+
+    /* ===== Card / Box Style ===== */
+    .card {
+        background: white;
+        padding: 22px;
+        margin: 20px 0;
+        border-radius: 14px;
+        box-shadow: 0 4px 14px rgba(0,0,0,0.08);
+        transition: 0.3s;
+    }
+
+    body.dark .card {
+        background: #1e1e1e;
+        box-shadow: 0 0 0 rgba(0,0,0,0);
+        border: 1px solid #333;
+    }
+
+    img {
+        width: 100%;
+        max-height: 260px;
+        object-fit: cover;
+        border-radius: 10px;
+        margin: 12px 0 5px 0;
+    }
+
+    ul li {
+        margin: 6px 0;
+    }
+
+    /* Tombol kembali */
+    .btn-back {
+        display: block;
+        width: fit-content;
+        margin: 40px auto 20px auto;
+        background: #744f28;
+        color: white;
+        padding: 12px 22px;
+        border-radius: 8px;
+        text-decoration: none;
+        font-weight: 600;
+        transition: 0.3s;
+    }
+
+    .btn-back:hover {
+        background: #d4a373;
+        color: #222;
+    }
+
+    footer {
+        text-align: center;
+        padding: 18px;
+        background: #f2f2f2;
+        color: #555;
+        margin-top: 30px;
+        font-size: 14px;
+    }
+
+    body.dark footer {
+        background: #1e1e1e;
+        color: #bbb;
+    }
+</style>
+</head>
+
+<body>
+<header id="title">Profil Museum Kayu & Kriya Ambar Polah</header>
+
+<div class="tools">
+    <button class="translate-btn" onclick="toggleLang()">Translate ID/EN</button>
+    <button class="dark-btn" onclick="toggleDark()">Dark Mode</button>
+</div>
+
+<div class="container">
+
+    <!-- ==== CARD 1 ==== -->
+    <div class="card">
+        <h2 id="k1">Koleksi Seni Kayu dan Estetika Budaya</h2>
+        <p id="p1">
+        Bagi masyarakat Jawa, kerajinan seni – khususnya seni ukir – tidak hanya sekadar estetika.
+        Kayu menjadi media paling dekat dengan manusia, bukan hanya bahan bangunan tetapi juga ekspresi rasa,
+        spiritualitas, dan kearifan lokal.
+        </p>
+
+        <p id="p2">
+        Koleksi seni kayu di Museum Kayu & Kriya Ambar Polah berasal dari Jepara, pusat ukir legendaris.
+        Ratusan furniture kuno seperti lemari, kursi, meja, gebyok, dan peti dirawat serta dipamerkan dengan standar konservasi terbaik.
+        </p>
+
+        <img src="assets/img/portfolio/shinta.jpg" alt="Koleksi Kayu">
+
+        <p id="p3">
+        Setiap ukiran menyimpan pesan filosofis tentang harmoni manusia dan alam. Motif flora dan fauna
+        mencerminkan hubungan masyarakat Jawa dengan alam sekitar—yang dijaga, bukan ditaklukkan.
+        </p>
+
+        <p id="p4">
+        Filosofi tertinggi seni ukir Jawa merujuk pada “Sangkan Paraning Dumadi”—asal dan tujuan hidup.
+        Garis ukiran menjadi simbol perjalanan spiritual manusia.
+        </p>
+    </div>
+
+    <!-- ==== CARD 2 ==== -->
+    <div class="card">
+        <h2 id="k2">Sejarah Perkembangan Ukiran Jepara</h2>
+        <p id="p5">
+        Sejak tahun 1955, seni ukir Jepara berkembang pesat berkat semangat pembaharuan R.A. Kartini.
+        Kayu jati, mahoni, dan sonokeling dipilih karena kekuatan serta keindahan seratnya.
+        Motif ukiran Jepara berkembang dari flora dan fauna pedesaan Jawa.
+        </p>
+
+        <img src="assets/img/portfolio/ambarsaja.jpg" alt="Ruang Ambar">
+    </div>
+
+    <!-- ==== CARD 3 ==== -->
+    <div class="card">
+        <h2 id="k3">Program Museum</h2>
+        <ul id="ul1">
+            <li>Workshop Kerajinan Kayu</li>
+            <li>Pelatihan Batik</li>
+            <li>Pameran Tematik</li>
+            <li>Aktivitas Budaya</li>
+        </ul>
+    </div>
+
+</div>
+
+<!-- TOMBOL KEMBALI KE INDEX -->
+<a href="index.html" class="btn-back">← Kembali ke Beranda</a>
+
+<!-- FOOTER -->
+<footer>
+    © Museum Kayu & Kriya Ambar Polah 2025. All rights reserved.
+</footer>
+
+<script>
+let lang = "id";
+
+function toggleLang() {
+    lang = lang === "id" ? "en" : "id";
+
+    const data = {
+        id: {
+            title: "Profil Museum Kayu & Kriya Ambar Polah",
+            k1: "Koleksi Seni Kayu dan Estetika Budaya",
+            p1: "Bagi masyarakat Jawa, kerajinan seni – khususnya seni ukir – tidak hanya sekadar estetika...",
+            p2: "Koleksi seni kayu di Museum Kayu & Kriya Ambar Polah berasal dari Jepara...",
+            p3: "Setiap ukiran menyimpan pesan filosofis tentang harmoni manusia dan alam...",
+            p4: "Filosofi tertinggi seni ukir Jawa merujuk pada 'Sangkan Paraning Dumadi'...",
+            k2: "Sejarah Perkembangan Ukiran Jepara",
+            p5: "Sejak tahun 1955 seni ukir Jepara berkembang pesat...",
+            k3: "Program Museum",
+            ul1: `
+                <li>Workshop Kerajinan Kayu</li>
+                <li>Pelatihan Batik</li>
+                <li>Pameran Tematik</li>
+                <li>Aktivitas Budaya</li>
+            `
+        },
+
+        en: {
+            title: "Profile of Ambar Polah Wood & Craft Museum",
+            k1: "Wood Art Collection and Cultural Aesthetics",
+            p1: "For Javanese people, craftsmanship—especially wood carving—is more than aesthetic...",
+            p2: "The museum's wood art collections mostly originate from Jepara...",
+            p3: "Each carving holds philosophical meaning about harmony between humans and nature...",
+            p4: "The highest philosophy refers to 'Sangkan Paraning Dumadi'...",
+            k2: "History of Jepara Woodcarving",
+            p5: "Since 1955, Jepara woodcarving grew rapidly influenced by R.A. Kartini...",
+            k3: "Museum Programs",
+            ul1: `
+                <li>Woodcraft Workshop</li>
+                <li>Batik Training</li>
+                <li>Thematic Exhibitions</li>
+                <li>Cultural Activities</li>
+            `
+        }
+    };
+
+    document.getElementById("title").innerText = data[lang].title;
+    document.getElementById("k1").innerText = data[lang].k1;
+    document.getElementById("p1").innerText = data[lang].p1;
+    document.getElementById("p2").innerText = data[lang].p2;
+    document.getElementById("p3").innerText = data[lang].p3;
+    document.getElementById("p4").innerText = data[lang].p4;
+    document.getElementById("k2").innerText = data[lang].k2;
+    document.getElementById("p5").innerText = data[lang].p5;
+    document.getElementById("k3").innerText = data[lang].k3;
+    document.getElementById("ul1").innerHTML = data[lang].ul1;
+}
+
+function toggleDark() {
+    document.body.classList.toggle("dark");
+}
+</script>
+
+</body>
+</html>

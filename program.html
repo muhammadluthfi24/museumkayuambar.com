@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Program Museum - Museum Kayu & Kriya Ambar Polah</title>
+
+    <!-- Favicons -->
+    <link href="assets/img/favicon.png" rel="icon">
+    <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+    <style>
+        body {
+            font-family: "Segoe UI", sans-serif;
+            margin: 0;
+            padding: 0;
+            background: #f5f5f5;
+            color: #222;
+            transition: background 0.3s, color 0.3s;
+        }
+
+        header {
+            background: #8b5e3c;
+            color: white;
+            padding: 40px 20px;
+            text-align: center;
+            position: relative;
+            transition: background 0.3s, color 0.3s;
+        }
+
+        header h1 {
+            font-size: 32px;
+            margin-bottom: 10px;
+        }
+
+        header p {
+            font-size: 16px;
+            opacity: 0.9;
+        }
+
+        /* Top Buttons */
+        #topButtons {
+            position: absolute;
+            top: 15px;
+            right: 20px;
+            display: flex;
+            gap: 10px;
+        }
+
+        #topButtons button {
+            background: #d4a373;
+            border: none;
+            color: #2d2d2d;
+            padding: 8px 14px;
+            border-radius: 6px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        #topButtons button:hover {
+            background: #8b5e3c;
+            color: #fff;
+        }
+
+        .meta {
+            padding: 15px 20px;
+            background: #ffffff;
+            font-size: 14px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            transition: color 0.3s, background 0.3s;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 20px auto;
+            background: #fff;
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeInUp 0.8s forwards;
+            transition: background 0.3s, color 0.3s;
+        }
+
+        @keyframes fadeInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        h2 {
+            border-left: 5px solid #8b5e3c;
+            padding-left: 10px;
+            margin-bottom: 20px;
+        }
+
+        .btn-back {
+            display: inline-block;
+            margin: 20px auto;
+            background: #8b5e3c;
+            color: white;
+            padding: 10px 18px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-size: 14px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        table th {
+            background: #8b5e3c;
+            color: #fff;
+            padding: 12px;
+            text-align: left;
+            font-size: 15px;
+        }
+
+        table td {
+            padding: 12px;
+            border-bottom: 1px solid #e0d5c6;
+            font-size: 14px;
+        }
+
+        table tr:nth-child(even) {
+            background: #f7f3ef;
+        }
+
+        .summary-card {
+            background: #fdfbf8;
+            border: 1px solid #e0d5c6;
+            padding: 18px;
+            margin-top: 25px;
+            border-radius: 8px;
+        }
+
+        .summary-card h3 {
+            margin: 0 0 10px 0;
+            color: #8b5e3c;
+        }
+
+        /* Dark Mode */
+        body.dark-mode {
+            background: #121212;
+            color: #e0e0e0;
+        }
+
+        body.dark-mode header {
+            background: #1e1e1e;
+            color: #fff;
+        }
+
+        body.dark-mode .container {
+            background: #1e1e1e;
+            color: #e0e0e0;
+        }
+
+        body.dark-mode .meta {
+            color: #aaa;
+            background: #2a2a2a;
+        }
+
+        body.dark-mode table th {
+            background: #5b3e1a;
+        }
+
+        body.dark-mode table tr:nth-child(even) {
+            background: #2a2a2a;
+        }
+
+        footer {
+            text-align: center;
+            padding: 15px;
+            background-color: #f2f2f2;
+            color: #777;
+            font-size: 14px;
+        }
+
+        body.dark-mode .summary-card {
+            background: #2a2a2a;
+            border-color: #5b3e1a;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <h1 data-id="ProgramMuseum">Program Museum</h1>
+        <p data-id="DescHeader">Program edukatif dan budaya di Museum Kayu & Kriya Ambar Polah</p>
+
+        <!-- Top Buttons -->
+        <div id="topButtons">
+            <button id="darkModeBtn">🌙 Dark Mode</button>
+            <button id="translateBtn">Translate EN</button>
+        </div>
+    </header>
+
+    <div class="meta" data-id="Meta">
+        🗂️ Program Museum
+        🗓️ 10 Mei 2024
+        🕒 00:00:00
+        👁️ 9971
+    </div>
+
+    <div class="container">
+        <h2 data-id="DaftarProgram">Daftar Program Museum Kayu & Kriya Ambar Polah</h2>
+
+        <p data-id="DescProgram">
+            Berikut adalah daftar program yang diselenggarakan Museum Kayu & Kriya Ambar Polah,
+            meliputi workshop, pelatihan batik, pameran seni, dan aktivitas budaya.
+        </p>
+
+        <table>
+            <tr>
+                <th data-id="NamaProgram">Nama Program</th>
+                <th data-id="JenisKegiatan">Jenis Kegiatan</th>
+                <th data-id="Unit">Unit Penyelenggara</th>
+                <th data-id="Status">Status</th>
+            </tr>
+
+            <tr>
+                <td data-id="Program1">Workshop Kriya Kayu</td>
+                <td data-id="Jenis1">Workshop</td>
+                <td data-id="Unit1">Divisi Workshop</td>
+                <td data-id="Status1">Aktif</td>
+            </tr>
+
+            <tr>
+                <td data-id="Program2">Pelatihan Batik Kayu</td>
+                <td data-id="Jenis2">Pelatihan Batik</td>
+                <td data-id="Unit2">Divisi Edukasi</td>
+                <td data-id="Status2">Aktif</td>
+            </tr>
+
+            <tr>
+                <td data-id="Program3">Pameran Seni Kayu Nusantara</td>
+                <td data-id="Jenis3">Pameran</td>
+                <td data-id="Unit3">Divisi Kuratorial</td>
+                <td data-id="Status3">Rutin Tahunan</td>
+            </tr>
+
+            <tr>
+                <td data-id="Program4">Festival Aktivitas Budaya</td>
+                <td data-id="Jenis4">Aktivitas Budaya</td>
+                <td data-id="Unit4">Divisi Hubungan Publik</td>
+                <td data-id="Status4">Event Spesial</td>
+            </tr>
+        </table>
+
+        <!-- CARD RINGKASAN -->
+        <div class="summary-card">
+            <h3 data-id="Ringkasan">Ringkasan Program</h3>
+            <p data-id="TotalProgram"><b>Total Program:</b> 4 kegiatan</p>
+            <p data-id="ProgramAktif"><b>Program Aktif:</b> 2 kegiatan</p>
+            <p data-id="ProgramTahunan"><b>Program Tahunan:</b> 1 kegiatan</p>
+            <p data-id="EventSpesial"><b>Event Spesial:</b> 1 kegiatan</p>
+        </div>
+
+    </div>
+
+    <center>
+        <a href="/" class="btn-back">← Kembali ke Beranda</a>
+    </center>
+
+    <footer>
+        © Museum Kayu & Kriya Ambar Polah 2025. All rights reserved.
+    </footer>
+    <script>
+        // Dark Mode toggle
+        const darkModeBtn = document.getElementById('darkModeBtn');
+        darkModeBtn.addEventListener('click', () => {
+            document.body.classList.toggle('dark-mode');
+        });
+
+        // Translate button
+        const translateBtn = document.getElementById('translateBtn');
+        let isEnglish = false;
+        const textMap = {
+            "ProgramMuseum": "Museum Programs",
+            "DescHeader": "Educational and cultural programs at Ambar Polah Wood & Craft Museum",
+            "Meta": "🗂️ Museum Programs • 🗓️ 10 May 2024 • 🕒 00:00:00 • 👁️ 9971",
+            "DaftarProgram": "Museum Programs List",
+            "DescProgram": "Below is a list of programs organized by Ambar Polah Wood & Craft Museum, including workshops, batik training, art exhibitions, and cultural activities.",
+            "NamaProgram": "Program Name",
+            "JenisKegiatan": "Activity Type",
+            "Unit": "Organizing Unit",
+            "Status": "Status",
+            "Program1": "Wood Craft Workshop",
+            "Jenis1": "Workshop",
+            "Unit1": "Workshop Division",
+            "Status1": "Active",
+            "Program2": "Batik Wood Training",
+            "Jenis2": "Batik Training",
+            "Unit2": "Education Division",
+            "Status2": "Active",
+            "Program3": "Nusantara Wood Art Exhibition",
+            "Jenis3": "Exhibition",
+            "Unit3": "Curatorial Division",
+            "Status3": "Annual",
+            "Program4": "Cultural Activities Festival",
+            "Jenis4": "Cultural Activities",
+            "Unit4": "Public Relations Division",
+            "Status4": "Special Event",
+            "Ringkasan": "Program Summary",
+            "TotalProgram": "Total Programs: 4 activities",
+            "ProgramAktif": "Active Programs: 2 activities",
+            "ProgramTahunan": "Annual Programs: 1 activity",
+            "EventSpesial": "Special Events: 1 activity"
+        };
+
+        translateBtn.addEventListener('click', () => {
+            document.querySelectorAll('[data-id]').forEach(el => {
+                const key = el.getAttribute('data-id');
+                if (!isEnglish) {
+                    el.textContent = textMap[key] || el.textContent;
+                } else {
+                    // revert to original Indonesian
+                    switch (key) {
+                        case "ProgramMuseum":
+                            el.textContent = "Program Museum";
+                            break;
+                        case "DescHeader":
+                            el.textContent =
+                                "Program edukatif dan budaya di Museum Kayu & Kriya Ambar Polah";
+                            break;
+                        case "Meta":
+                            el.textContent = "🗂️ Program Museum 🗓️ 10 Mei 2024 🕒 00:00:00 👁️ 9971";
+                            break;
+                        case "DaftarProgram":
+                            el.textContent = "Daftar Program Museum Kayu & Kriya Ambar Polah";
+                            break;
+                        case "DescProgram":
+                            el.textContent =
+                                "Berikut adalah daftar program yang diselenggarakan Museum Kayu & Kriya Ambar Polah, meliputi workshop, pelatihan batik, pameran seni, dan aktivitas budaya.";
+                            break;
+                        case "NamaProgram":
+                            el.textContent = "Nama Program";
+                            break;
+                        case "JenisKegiatan":
+                            el.textContent = "Jenis Kegiatan";
+                            break;
+                        case "Unit":
+                            el.textContent = "Unit Penyelenggara";
+                            break;
+                        case "Status":
+                            el.textContent = "Status";
+                            break;
+                        case "Program1":
+                            el.textContent = "Workshop Kriya Kayu";
+                            break;
+                        case "Jenis1":
+                            el.textContent = "Workshop";
+                            break;
+                        case "Unit1":
+                            el.textContent = "Divisi Workshop";
+                            break;
+                        case "Status1":
+                            el.textContent = "Aktif";
+                            break;
+                        case "Program2":
+                            el.textContent = "Pelatihan Batik Kayu";
+                            break;
+                        case "Jenis2":
+                            el.textContent = "Pelatihan Batik";
+                            break;
+                        case "Unit2":
+                            el.textContent = "Divisi Edukasi";
+                            break;
+                        case "Status2":
+                            el.textContent = "Aktif";
+                            break;
+                        case "Program3":
+                            el.textContent = "Pameran Seni Kayu Nusantara";
+                            break;
+                        case "Jenis3":
+                            el.textContent = "Pameran";
+                            break;
+                        case "Unit3":
+                            el.textContent = "Divisi Kuratorial";
+                            break;
+                        case "Status3":
+                            el.textContent = "Rutin Tahunan";
+                            break;
+                        case "Program4":
+                            el.textContent = "Festival Aktivitas Budaya";
+                            break;
+                        case "Jenis4":
+                            el.textContent = "Aktivitas Budaya";
+                            break;
+                        case "Unit4":
+                            el.textContent = "Divisi Hubungan Publik";
+                            break;
+                        case "Status4":
+                            el.textContent = "Event Spesial";
+                            break;
+                        case "Ringkasan":
+                            el.textContent = "Ringkasan Program";
+                            break;
+                        case "TotalProgram":
+                            el.textContent = "Total Program: 4 kegiatan";
+                            break;
+                        case "ProgramAktif":
+                            el.textContent = "Program Aktif: 2 kegiatan";
+                            break;
+                        case "ProgramTahunan":
+                            el.textContent = "Program Tahunan: 1 kegiatan";
+                            break;
+                        case "EventSpesial":
+                            el.textContent = "Event Spesial: 1 kegiatan";
+                            break;
+                    }
+                }
+            });
+            isEnglish = !isEnglish;
+            translateBtn.textContent = isEnglish ? "Translate ID" : "Translate EN";
+        });
+    </script>
+
+</body>
+
+</html>

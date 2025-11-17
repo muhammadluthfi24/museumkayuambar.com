@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Peraturan Pengunjung - Museum Kayu & Kriya Ambar Polah</title>
+
+  <!-- Favicons -->
+  <link href="assets/img/favicon.png" rel="icon">
+  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <style>
+    body {
+      font-family: "Poppins", sans-serif;
+      background: #f9f9f9;
+      margin: 0;
+      padding: 0;
+      color: #333;
+      line-height: 1.6;
+      opacity: 0;
+      animation: fadeIn 1s forwards;
+      transition: background 0.3s, color 0.3s;
+    }
+
+    @keyframes fadeIn {
+      to {
+        opacity: 1;
+      }
+    }
+
+    header {
+      background: #5b3e1a;
+      color: #fff;
+      text-align: center;
+      padding: 40px 20px;
+      position: relative;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 2rem;
+    }
+
+    header p {
+      margin-top: 10px;
+      opacity: 0.9;
+      max-width: 700px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    /* Translate Button */
+    #translateBtn {
+      position: absolute;
+      right: 20px;
+      top: 20px;
+      background: #d4a373;
+      color: #fff;
+      border: none;
+      padding: 8px 12px;
+      border-radius: 6px;
+      cursor: pointer;
+      font-weight: 500;
+      transition: 0.3s;
+    }
+
+    #translateBtn:hover {
+      background: #5b3e1a;
+    }
+
+    .container {
+      width: 92%;
+      max-width: 1150px;
+      margin: 30px auto;
+      background: #fff;
+      border-radius: 14px;
+      padding: 30px;
+      box-shadow: 0 6px 22px rgba(0, 0, 0, 0.08);
+    }
+
+    .section-title {
+      font-size: 26px;
+      margin-bottom: 18px;
+      color: #5b3e1a;
+      border-left: 5px solid #d9a86c;
+      padding-left: 12px;
+    }
+
+    .rules-box {
+      background: #fffdf8;
+      padding: 20px;
+      border-radius: 12px;
+      border: 1px solid #e6d5bd;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+      margin-top: 20px;
+    }
+
+    .rules-box h3 {
+      margin-top: 0;
+      color: #5b3e1a;
+    }
+
+    .rules-box ul {
+      padding-left: 20px;
+    }
+
+    .rules-box ul li {
+      margin-bottom: 12px;
+    }
+
+    /* Foto Pengunjung */
+    .portfolio-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 15px;
+      margin-top: 20px;
+    }
+
+    .portfolio-grid img {
+      width: 100%;
+      height: 150px;
+      object-fit: cover;
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+      transition: transform 0.3s;
+    }
+
+    .portfolio-grid img:hover {
+      transform: scale(1.05);
+    }
+
+    .btn-back {
+      display: block;
+      text-align: center;
+      background: #5b3e1a;
+      color: #fff;
+      text-decoration: none;
+      padding: 12px 24px;
+      margin: 40px auto;
+      width: fit-content;
+      border-radius: 6px;
+      font-weight: 500;
+      transition: 0.3s;
+    }
+
+    .btn-back:hover {
+      background: #d4a373;
+      color: #2d2d2d;
+    }
+
+    /* Dark Mode */
+    body.dark-mode {
+      background: #121212;
+      color: #e0e0e0;
+    }
+
+    body.dark-mode .container,
+    body.dark-mode .rules-box {
+      background: #1e1e1e;
+      box-shadow: 0 4px 12px rgba(255, 255, 255, 0.05);
+    }
+
+    body.dark-mode .portfolio-grid img {
+      filter: brightness(0.8);
+    }
+
+    body.dark-mode header {
+      background: #2c1e0e;
+    }
+
+    body.dark-mode .btn-back {
+      background: #2c1e0e;
+      color: #fff;
+    }
+
+    footer {
+      text-align: center;
+      padding: 15px;
+      background-color: #f2f2f2;
+      color: #777;
+      font-size: 14px;
+    }
+
+    body.dark-mode .btn-back:hover {
+      background: #d4a373;
+      color: #121212;
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <h1>Peraturan Pengunjung Museum</h1>
+    <p>Selamat datang di Museum Kayu & Kriya Ambar Polah. Mohon patuhi peraturan demi kenyamanan dan kelestarian
+      koleksi.</p>
+    <button id="translateBtn">ID ↔ EN</button>
+  </header>
+
+  <div class="container">
+
+    <h2 class="section-title">Peraturan Pengunjung Museum Kayu & Kriya Ambar Polah</h2>
+
+    <div class="rules-box">
+      <h3>Aturan Umum & Konservasi Koleksi</h3>
+      <ul>
+        <li>Dilarang menyentuh, memanjat, atau memindahkan koleksi dalam bentuk apapun (patung kayu, perabotan, atau
+          artefak kriya lainnya).</li>
+        <li>Dilarang membawa makanan dan minuman ke dalam area pameran galeri. Area makan telah disediakan di luar zona
+          koleksi.</li>
+        <li>Dilarang membawa senjata tajam, benda berbahaya, atau barang yang dapat merusak fasilitas museum.</li>
+        <li>Wajib menjaga kebersihan dan tidak membuang sampah sembarangan di seluruh area museum dan taman.</li>
+      </ul>
+
+      <h3>Fotografi dan Dokumentasi</h3>
+      <ul>
+        <li>Pengambilan foto untuk kepentingan pribadi dan non-komersial diperbolehkan tanpa menggunakan <em>flash</em>
+          (kilat cahaya).</li>
+        <li>Penggunaan tongkat narsis (<em>selfie stick</em>) dan tripod besar dilarang di area galeri yang padat
+          pengunjung.</li>
+        <li>Untuk tujuan komersial (pre-wedding, iklan, film), wajib mengajukan izin tertulis dan mematuhi biaya serta
+          ketentuan yang berlaku.</li>
+      </ul>
+
+      <h3>Kenyamanan dan Keamanan</h3>
+      <ul>
+        <li>Pengunjung wajib mengenakan pakaian yang sopan dan tertutup.</li>
+        <li>Wajib menjaga ketenangan dan menghindari berbicara dengan suara keras, terutama di dekat koleksi atau saat
+          berada dalam tur.</li>
+        <li>Orang tua atau wali bertanggung jawab penuh atas perilaku anak-anak di bawah pengawasan mereka.</li>
+        <li>Tas berukuran besar, ransel, dan jaket harus dititipkan di loker atau penitipan barang yang telah
+          disediakan.</li>
+        <li>Pengunjung yang melanggar peraturan dapat diminta untuk meninggalkan area museum tanpa pengembalian biaya
+          tiket.</li>
+      </ul>
+    </div>
+
+    <!-- Foto Pengunjung -->
+    <div class="portfolio-section">
+      <h3 class="section-title">Foto Pengunjung</h3>
+      <div class="portfolio-grid">
+        <img src="assets/img/portfolio/pengujung.jpg" alt="Pengunjung 1" />
+        <img src="assets/img/portfolio/pengujung1.jpg" alt="Pengunjung 2" />
+        <img src="assets/img/portfolio/pengujung2.jpg" alt="Pengunjung 3" />
+        <img src="assets/img/portfolio/pengujung3.jpg" alt="Pengunjung 4" />
+        <img src="assets/img/portfolio/pengujung5.jpg" alt="Pengunjung 5" />
+      </div>
+    </div>
+
+  </div>
+
+  <a href="index.html" class="btn-back">← Kembali ke Beranda</a>
+  <footer>
+    © Museum Kayu & Kriya Ambar Polah 2025. All rights reserved.
+  </footer>
+  <script>
+    // Dark Mode toggle on double-click header
+    document.querySelector('header').addEventListener('dblclick', () => {
+      document.body.classList.toggle('dark-mode');
+    });
+
+    // Translate toggle (ID ↔ EN)
+    const translateBtn = document.getElementById('translateBtn');
+    let isEN = false;
+    translateBtn.addEventListener('click', () => {
+      isEN = !isEN;
+      if (isEN) {
+        document.querySelector('header h1').textContent = "Visitor Rules - Museum Kayu & Kriya Ambar Polah";
+        document.querySelector('header p').textContent =
+          "Welcome to Museum Kayu & Kriya Ambar Polah. Please follow the rules for visitor comfort and collection preservation.";
+        document.querySelectorAll('.section-title')[0].textContent = "Visitor Rules";
+        document.querySelectorAll('.rules-box h3')[0].textContent = "General Rules & Collection Conservation";
+        document.querySelectorAll('.rules-box h3')[1].textContent = "Photography and Documentation";
+        document.querySelectorAll('.rules-box h3')[2].textContent = "Comfort and Security";
+        document.querySelectorAll('.rules-box ul')[0].innerHTML = `
+          <li>Do not touch, climb, or move any collection items (wooden statues, furniture, or other craft artifacts).</li>
+          <li>Do not bring food or drinks into the gallery exhibition area. Eating areas are provided outside the collection zones.</li>
+          <li>Do not bring sharp weapons, dangerous items, or objects that may damage museum facilities.</li>
+          <li>Maintain cleanliness and do not litter throughout the museum and garden areas.</li>`;
+        document.querySelectorAll('.rules-box ul')[1].innerHTML =
+          `
+          <li>Photography for personal and non-commercial purposes is allowed without using flash.</li>
+          <li>The use of selfie sticks and large tripods is prohibited in crowded gallery areas.</li>
+          <li>For commercial purposes (pre-wedding, advertising, film), written permission is required and must comply with applicable fees and regulations.</li>`;
+        document.querySelectorAll('.rules-box ul')[2].innerHTML = `
+          <li>Visitors must wear modest and appropriate clothing.</li>
+          <li>Maintain silence and avoid loud talking, especially near collections or during tours.</li>
+          <li>Parents or guardians are fully responsible for the behavior of children under their supervision.</li>
+          <li>Large bags, backpacks, and jackets must be stored in lockers or designated storage areas.</li>
+          <li>Visitors who violate the rules may be asked to leave the museum area without a refund.</li>`;
+      } else {
+        location.reload(); // kembali ke bahasa ID
+      }
+    });
+  </script>
+
+</body>
+
+</html>

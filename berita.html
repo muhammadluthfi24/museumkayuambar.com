@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Berita — Museum Kayu & Kriya Ambar Polah</title>
+
+  <!-- Favicons -->
+  <link href="assets/img/favicon.png" rel="icon">
+  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <style>
+    body {
+      font-family: "Poppins", sans-serif;
+      background-color: #f9f9f9;
+      margin: 0;
+      color: #333;
+      opacity: 0;
+      animation: fadeIn 1s forwards;
+      transition: background 0.3s, color 0.3s;
+    }
+
+    @keyframes fadeIn {
+      to {
+        opacity: 1;
+      }
+    }
+
+    header {
+      background-color: #5b3e1a;
+      color: white;
+      text-align: center;
+      padding: 25px 0;
+      position: relative;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 2rem;
+    }
+
+    #translateBtn {
+      position: absolute;
+      right: 20px;
+      top: 20px;
+      background: #d4a373;
+      color: #fff;
+      border: none;
+      padding: 8px 12px;
+      border-radius: 6px;
+      cursor: pointer;
+      font-weight: 500;
+      transition: 0.3s;
+    }
+
+    #translateBtn:hover {
+      background: #5b3e1a;
+    }
+
+    .container {
+      width: 90%;
+      max-width: 1100px;
+      margin: 40px auto;
+    }
+
+    .news-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 25px;
+    }
+
+    .news-card {
+      background: white;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      overflow: hidden;
+      transition: transform 0.3s;
+    }
+
+    .news-card:hover {
+      transform: translateY(-5px);
+    }
+
+    .news-card img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+    }
+
+    .news-content {
+      padding: 20px;
+    }
+
+    .news-date {
+      color: #a36d45;
+      font-size: 14px;
+      font-weight: bold;
+      margin-bottom: 8px;
+    }
+
+    .news-content h3 {
+      color: #4b2c20;
+      margin-top: 0;
+      margin-bottom: 10px;
+      font-size: 20px;
+    }
+
+    .news-content p {
+      color: #555;
+      font-size: 15px;
+      line-height: 1.6;
+    }
+
+    .btn-read {
+      display: inline-block;
+      margin-top: 10px;
+      background-color: #d4a373;
+      color: white;
+      padding: 8px 14px;
+      border-radius: 5px;
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    .btn-read:hover {
+      background-color: #a36d45;
+    }
+
+    .btn-back {
+      display: block;
+      text-align: center;
+      background: #5b3e1a;
+      color: #fff;
+      text-decoration: none;
+      padding: 12px 20px;
+      margin: 50px auto;
+      width: fit-content;
+      border-radius: 6px;
+      transition: 0.3s;
+    }
+
+    .btn-back:hover {
+      background: #d4a373;
+    }
+
+    footer {
+      text-align: center;
+      padding: 15px;
+      background-color: #f2f2f2;
+      color: #777;
+      font-size: 14px;
+    }
+
+    /* Dark Mode */
+    body.dark-mode {
+      background-color: #121212;
+      color: #e0e0e0;
+    }
+
+    body.dark-mode header {
+      background-color: #2c1e0e;
+    }
+
+    body.dark-mode .news-card {
+      background-color: #1e1e1e;
+      box-shadow: 0 4px 10px rgba(255, 255, 255, 0.05);
+    }
+
+    body.dark-mode .news-content h3,
+    body.dark-mode .news-content p,
+    body.dark-mode .news-date {
+      color: #e0e0e0;
+    }
+
+    body.dark-mode .btn-read,
+    body.dark-mode .btn-back {
+      background-color: #2c1e0e;
+      color: #fff;
+    }
+
+    body.dark-mode .btn-read:hover,
+    body.dark-mode .btn-back:hover {
+      background-color: #d4a373;
+      color: #121212;
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <h1>Berita Museum Kayu & Kriya Ambar Polah</h1>
+    <p>Kabar terbaru seputar kegiatan, budaya, dan pameran museum.</p>
+    <button id="translateBtn">ID ↔ EN</button>
+  </header>
+
+  <div class="container">
+    <div class="news-grid">
+
+      <div class="news-card">
+        <img src="assets/img/portfolio/pengujung3.jpg" alt="Pameran Kayu Nusantara">
+        <div class="news-content">
+          <div class="news-date">10 November 2025</div>
+          <h3>Resmi Dibuka! Museum Kayu & Kriya Ambar Polah Hadirkan Warisan Seni Nusantara</h3>
+          <p>Museum Kayu & Kriya “Ambar Polah” kini resmi dibuka untuk umum, menawarkan pengalaman unik bagi para
+            pecinta seni dan budaya. Museum ini menampilkan koleksi kayu dan kerajinan tangan khas Indonesia yang jarang
+            ditemukan di tempat lain.
+
+          </p>
+          <a href="detail-berita.html" class="btn-read">Baca Selengkapnya →</a>
+        </div>
+      </div>
+
+      <div class="news-card">
+        <img src="assets/img/portfolio/pengujung1.jpg" alt="Workshop Ukir Kayu">
+        <div class="news-content">
+          <div class="news-date">14 November 2025</div>
+          <h3>Ramai Pengunjung! Museum Kayu & Kriya Ambar Polah Jadi Destinasi Seni Favorit</h3>
+          <p>Antusiasme pengunjung memadati Museum Kayu & Kriya Ambar Polah sejak hari pertama dibuka. Dari keluarga,
+            pelajar, hingga turis, semua berbondong-bondong ingin menyaksikan keindahan koleksi kayu dan kriya yang
+            memukau.</p>
+          <a href="detail1.html" class="btn-read">Baca Selengkapnya →</a>
+        </div>
+      </div>
+
+      <div class="news-card">
+        <img src="assets/img/portfolio/joglo.jpg" alt="Digital Museum">
+        <div class="news-content">
+          <div class="news-date">17 November 2025</div>
+          <h3>Joglo utama: Destinasi Kuliner & Gaya Hidup yang Wajib Dikunjungi!</h3>
+          <p>Pecinta kuliner dan lifestyle, siap-siap! Joglo utama hadir sebagai destinasi baru yang memadukan citarasa
+            kuliner khas Yogyakarta dengan konsep tempat yang nyaman dan instagramable. Sejak dibuka, Joglo utama
+            langsung menarik perhatian masyarakat dari berbagai kalangan.
+            Yogyakarta hingga inovasi modern yang menggugah selera.</p>
+          <a href="jogjlo.html" class="btn-read">Baca Selengkapnya →</a>
+        </div>
+      </div>
+
+      <div class="news-card">
+        <img src="assets/img/portfolio/ruang ambar.jpg" alt="Festival Kriya Anak Bangsa">
+        <div class="news-content">
+          <div class="news-date">19 November 2025</div>
+          <h3>Ruang Ambar: Ruang Kreatif & Inspiratif untuk Semua!</h3>
+          <p>Hadir sebagai pusat kreativitas dan inovasi, Ruang Ambar kini menjadi destinasi favorit bagi pelajar,
+            mahasiswa, hingga komunitas kreatif. Ruang ini dirancang untuk mendukung kegiatan belajar, workshop, hingga
+            kolaborasi kreatif, menghadirkan atmosfer yang nyaman dan inspiratif.
+
+            Sejak dibuka, pengunjung tampak antusias memanfaatkan fasilitasnya.</p>
+          <a href="ambar.html" class="btn-read">Baca Selengkapnya →</a>
+        </div>
+      </div>
+
+
+
+      <div class="news-card">
+        <img src="assets/img/portfolio/sinta.jpg" alt="Festival Kriya Anak Bangsa">
+        <div class="news-content">
+          <div class="news-date">21 November 2025</div>
+          <h3>Ruang Shinta: Menyelami Kekayaan Seni dan Budaya di Museum Kayu & Kriya Ambar Polah</h3>
+          <p>Ruang Shinta kini menjadi salah satu ruang paling menarik di Museum Kayu & Kriya Ambar Polah. Ruang ini
+            menghadirkan koleksi seni tradisional dan kerajinan lokal yang memukau, mulai dari wayang golek, patung
+            kayu, hingga lukisan-lukisan yang merepresentasikan sejarah, budaya, dan kehidupan masyarakat Yogyakarta.
+          </p>
+          <a href="sinta.html" class="btn-read">Baca Selengkapnya →</a>
+        </div>
+      </div>
+
+
+      <div class="news-card">
+        <img src="assets/img/portfolio/cafe.jpg" alt="Festival Kriya Anak Bangsa">
+        <div class="news-content">
+          <div class="news-date">22 November 2025</div>
+          <h3>Cafe Shop Museum: Nikmati Kopi & Camilan Sambil Menyerap Seni</h3>
+          <p>Kini pengalaman berkunjung ke museum semakin lengkap! Museum Kayu & Kriya Ambar Polah menghadirkan Cafe
+            Shop di dalam area museum, tempat pengunjung bisa bersantai, menikmati kopi, teh, dan camilan khas, sambil
+            tetap menikmati keindahan koleksi seni yang ada.
+          </p>
+          <a href="chop.html" class="btn-read">Baca Selengkapnya →</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <a href="index.html" class="btn-back">← Kembali ke Beranda</a>
+
+  <footer>
+    © Museum Kayu & Kriya Ambar Polah 2025. All rights reserved.
+  </footer>
+
+  <script>
+    // Dark Mode toggle double-click header
+    document.querySelector('header').addEventListener('dblclick', () => {
+      document.body.classList.toggle('dark-mode');
+    });
+
+    // Translate Button
+    const translateBtn = document.getElementById('translateBtn');
+    let isEN = false;
+    translateBtn.addEventListener('click', () => {
+      isEN = !isEN;
+      if (isEN) {
+        document.querySelector('header h1').textContent = "🪵 News — Museum Kayu & Kriya Ambar Polah";
+        document.querySelector('header p').textContent =
+          "Latest news about museum activities, culture, and exhibitions.";
+        document.querySelectorAll('.btn-read').forEach(btn => btn.textContent = "Read More →");
+        document.querySelector('.btn-back').textContent = "← Back to Home";
+        document.querySelectorAll('.news-date').forEach(d => d.textContent = d.textContent);
+        document.querySelectorAll('.news-content h3').forEach(h => {
+          const mapping = {
+            "Pameran “Jejak Kriya Nusantara” Resmi Dibuka": "Exhibition “Tracing Nusantara Crafts” Officially Opened",
+            "Workshop Ukir Kayu Tradisional Disambut Antusias": "Traditional Wood Carving Workshop Welcomed Enthusiastically",
+            "Museum Kayu & Kriya Luncurkan Tur Virtual 360°": "Museum Launches 360° Virtual Tour",
+            "Festival Kriya Anak Bangsa Sukses Menarik Ribuan Pengunjung": "National Craft Festival Successfully Attracts Thousands of Visitors"
+          };
+          if (mapping[h.textContent]) h.textContent = mapping[h.textContent];
+        });
+      } else {
+        location.reload();
+      }
+    });
+  </script>
+
+</body>
+
+</html>

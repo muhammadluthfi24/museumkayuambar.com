@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Alamat & Peta - Museum Kayu & Kriya Ambar Polah</title>
+
+  <!-- Favicons -->
+  <link href="assets/img/favicon.png" rel="icon">
+  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <style>
+    body {
+      font-family: "Poppins", sans-serif;
+      background: #f9f9f9;
+      margin: 0;
+      padding: 0;
+      color: #333;
+      line-height: 1.6;
+      opacity: 0;
+      animation: fadeIn 1s forwards;
+      transition: background 0.3s, color 0.3s;
+    }
+
+    @keyframes fadeIn {
+      to {
+        opacity: 1;
+      }
+    }
+
+    header {
+      background: #5b3e1a;
+      color: #fff;
+      text-align: center;
+      padding: 40px 20px;
+      position: relative;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 2rem;
+    }
+
+    header p {
+      margin-top: 10px;
+      opacity: 0.9;
+      max-width: 700px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    /* Translate Button */
+    #translateBtn {
+      position: absolute;
+      right: 20px;
+      top: 20px;
+      background: #d4a373;
+      color: #fff;
+      border: none;
+      padding: 8px 12px;
+      border-radius: 6px;
+      cursor: pointer;
+      font-weight: 500;
+      transition: 0.3s;
+    }
+
+    #translateBtn:hover {
+      background: #5b3e1a;
+    }
+
+    .container {
+      width: 92%;
+      max-width: 1150px;
+      margin: 30px auto;
+      background: #fff;
+      border-radius: 14px;
+      padding: 30px;
+      box-shadow: 0 6px 22px rgba(0, 0, 0, 0.08);
+    }
+
+    .section-title {
+      font-size: 26px;
+      margin-bottom: 18px;
+      color: #5b3e1a;
+      border-left: 5px solid #d9a86c;
+      padding-left: 12px;
+    }
+
+    .info-box {
+      background: #fffdf8;
+      padding: 20px;
+      border-radius: 12px;
+      border: 1px solid #e6d5bd;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+      margin-bottom: 30px;
+    }
+
+    .info-box h3 {
+      margin-top: 0;
+      color: #5b3e1a;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .info-box p,
+    .info-box a {
+      margin: 6px 0;
+      color: #333;
+      text-decoration: none;
+    }
+
+    .map-frame {
+      width: 100%;
+      height: 400px;
+      border: 0;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    }
+
+    .btn-back {
+      display: block;
+      text-align: center;
+      background: #5b3e1a;
+      color: #fff;
+      text-decoration: none;
+      padding: 12px 24px;
+      margin: 40px auto;
+      width: fit-content;
+      border-radius: 6px;
+      font-weight: 500;
+      transition: 0.3s;
+    }
+
+    .btn-back:hover {
+      background: #d4a373;
+      color: #2d2d2d;
+    }
+
+    .social-media a {
+      display: inline-block;
+      margin-right: 12px;
+      text-decoration: none;
+      color: #5b3e1a;
+      font-weight: 500;
+    }
+
+    /* Dark Mode */
+    body.dark-mode {
+      background: #121212;
+      color: #e0e0e0;
+    }
+
+    footer {
+      text-align: center;
+      padding: 15px;
+      background-color: #f2f2f2;
+      color: #777;
+      font-size: 14px;
+    }
+
+    body.dark-mode .container,
+    body.dark-mode .info-box {
+      background: #1e1e1e;
+      box-shadow: 0 4px 12px rgba(255, 255, 255, 0.05);
+    }
+
+    body.dark-mode .map-frame {
+      filter: brightness(0.8);
+    }
+
+    body.dark-mode header {
+      background: #2c1e0e;
+    }
+
+    body.dark-mode .btn-back {
+      background: #2c1e0e;
+      color: #fff;
+    }
+
+    body.dark-mode .btn-back:hover {
+      background: #d4a373;
+      color: #121212;
+    }
+
+    body.dark-mode .social-media a {
+      color: #d4a373;
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <h1>Alamat & Peta Museum</h1>
+    <p>Temukan Museum Kayu & Kriya Ambar Polah dan informasi kontak kami.</p>
+    <button id="translateBtn">ID ↔ EN</button>
+  </header>
+
+  <div class="container">
+
+    <h2 class="section-title">Alamat Lengkap</h2>
+    <div class="info-box">
+      <h3>🏠 Lokasi Museum</h3>
+      <p>Jl. Gua Kiskendo No. 16</p>
+      <p>Grigak, Giripurwo, Girimulyo</p>
+      <p>Kulon Progo, Yogyakarta</p>
+      <p>Kode Pos: 55674</p>
+    </div>
+
+    <h2 class="section-title">Lokasi Kami di Peta</h2>
+    <iframe
+      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3958.0000000000!2d110.000000!3d-7.000000!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2sMuseum%20Kayu%20%26%20Kriya%20Ambar%20Polah!5e0!3m2!1sid!2sid!4v1234567890"
+      allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" class="map-frame">
+    </iframe>
+
+    <h2 class="section-title">Informasi Kontak</h2>
+    <div class="info-box">
+      <h3>📞 Telepon / WhatsApp</h3>
+      <p><a href="tel:+6282342754175">+62 823 4275 4175</a></p>
+
+      <h3>📧 Email</h3>
+      <p><a href="mailto:museumambarpolah@gmail.com">museumambarpolah@gmail.com</a></p>
+
+      <h3>🌐 Media Sosial</h3>
+      <p class="social-media">
+        <a href="https://www.instagram.com/museumambarpolah" target="_blank">@museumambarpolah</a>
+        <a href="https://www.mps.com/museumambarpolah" target="_blank">MPS</a>
+      </p>
+    </div>
+
+  </div>
+
+  <a href="index.html" class="btn-back">← Kembali ke Beranda</a>
+  <footer>
+    © Museum Kayu & Kriya Ambar Polah 2025. All rights reserved.
+  </footer>
+  <script>
+    // Dark Mode toggle on double-click header
+    document.querySelector('header').addEventListener('dblclick', () => {
+      document.body.classList.toggle('dark-mode');
+    });
+
+    // Translate toggle (ID ↔ EN)
+    const translateBtn = document.getElementById('translateBtn');
+    let isEN = false;
+    translateBtn.addEventListener('click', () => {
+      isEN = !isEN;
+      if (isEN) {
+        document.querySelector('header h1').textContent = "Museum Address & Map";
+        document.querySelector('header p').textContent =
+          "Find Museum Kayu & Kriya Ambar Polah and our contact information.";
+        document.querySelectorAll('.section-title')[0].textContent = "Full Address";
+        document.querySelectorAll('.section-title')[1].textContent = "Our Location on Map";
+        document.querySelectorAll('.section-title')[2].textContent = "Contact Information";
+        document.querySelectorAll('.info-box h3')[0].textContent = "🏠 Museum Location";
+        document.querySelectorAll('.info-box h3')[1].textContent = "📞 Phone / WhatsApp";
+        document.querySelectorAll('.info-box h3')[2].textContent = "📧 Email";
+        document.querySelectorAll('.info-box h3')[3].textContent = "🌐 Social Media";
+      } else {
+        location.reload(); // kembali ke bahasa ID
+      }
+    });
+  </script>
+</body>
+
+</html>
