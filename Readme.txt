@@ -34,12 +34,6 @@ Seluruh:
 - tombol  
 - footer  
 
-Akan otomatis berubah bahasa dengan script translate.  
-Semua elemen menggunakan atribut:
-
-```html
-<span data-id="Teks Indonesia" data-en="English Text"></span>
-```
 ### ✔4. Footer Resmi
 
     © Museum Kayu & Kriya Ambar Polah 2025. All rights reserved.
