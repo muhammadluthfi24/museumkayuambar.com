@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Hubungi Kami | Museum Kayu & Kriya Ambar Polah</title>
+
+  <link href="assets/img/favicon.png" rel="icon">
+  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <style>
+    body {
+      font-family: "Poppins", sans-serif;
+      background: #f9f9f9;
+      margin: 0;
+      padding: 0;
+      color: #333;
+      line-height: 1.6;
+      transition: background 0.3s, color 0.3s;
+    }
+
+    header {
+      background: #5b3e1a;
+      color: #fff;
+      text-align: center;
+      padding: 40px 20px;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 2rem;
+    }
+
+    header p {
+      margin-top: 10px;
+      opacity: 0.95;
+      max-width: 700px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    header .btns {
+      margin-top: 12px;
+      display: flex;
+      justify-content: center;
+      gap: 12px;
+    }
+
+    header button {
+      padding: 8px 14px;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      font-weight: 500;
+    }
+
+    #darkModeBtn {
+      background: #d4a373;
+    }
+
+    #translateBtn {
+      background: #5b3e1a;
+      color: #fff;
+      border: 1px solid #fff;
+    }
+
+    /* FORM CONTAINER */
+    .container {
+      width: 92%;
+      max-width: 600px;
+      margin: 30px auto;
+      background: #fff;
+      border-radius: 14px;
+      padding: 30px;
+      box-shadow: 0 6px 22px rgba(0, 0, 0, 0.08);
+      animation: fadeIn 0.7s ease-out forwards;
+      opacity: 0;
+      transform: translateY(20px);
+    }
+
+    @keyframes fadeIn {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .section-title {
+      font-size: 26px;
+      color: #5b3e1a;
+      margin-bottom: 15px;
+      font-weight: 600;
+    }
+
+    label {
+      font-size: 15px;
+      font-weight: 600;
+      color: #5b3e1a;
+    }
+
+    input,
+    textarea {
+      width: 100%;
+      padding: 12px;
+      margin-top: 6px;
+      margin-bottom: 16px;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+      font-size: 15px;
+      transition: 0.2s;
+      font-family: "Poppins", sans-serif;
+    }
+
+    input:focus,
+    textarea:focus {
+      border-color: #d4a373;
+      outline: none;
+      box-shadow: 0 0 5px rgba(212, 163, 115, 0.6);
+    }
+
+    textarea {
+      height: 130px;
+      resize: none;
+    }
+
+    .btn-submit {
+      width: 100%;
+      padding: 12px;
+      border: none;
+      border-radius: 8px;
+      background: #5b3e1a;
+      color: #fff;
+      font-size: 16px;
+      cursor: pointer;
+      font-weight: 600;
+      transition: 0.3s;
+    }
+
+    .btn-submit:hover {
+      background: #d4a373;
+      color: #2b2b2b;
+    }
+
+    .btn-back {
+      display: block;
+      text-align: center;
+      background: #5b3e1a;
+      color: #fff;
+      padding: 10px 20px;
+      border-radius: 6px;
+      margin: 25px auto;
+      width: fit-content;
+      font-weight: 500;
+      text-decoration: none;
+      transition: 0.3s;
+    }
+
+    .btn-back:hover {
+      background: #d4a373;
+      color: #2b2b2d;
+    }
+
+    /* DARK MODE */
+    body.dark-mode {
+      background: #1e1e1e;
+      color: #ddd;
+    }
+
+    body.dark-mode .container {
+      background: #2c2c2c;
+      color: #ddd;
+      box-shadow: 0 6px 22px rgba(0, 0, 0, 0.4);
+    }
+
+    body.dark-mode input,
+    body.dark-mode textarea {
+      background: #3a3a3a;
+      color: #fff;
+      border: 1px solid #777;
+    }
+
+    body.dark-mode .btn-submit {
+      background: #444;
+      color: #fff;
+    }
+
+    body.dark-mode .btn-submit:hover {
+      background: #d4a373;
+      color: #2b2b2d;
+    }
+
+    footer {
+      text-align: center;
+      padding: 15px;
+      margin-top: 30px;
+      background: #f2f2f2;
+      color: #777;
+      font-size: 14px;
+    }
+
+    body.dark-mode footer {
+      background: #2c2c2c;
+      color: #aaa;
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <h1 data-id="Hubungi Kami">Hubungi Kami</h1>
+    <p data-id="Perlu bantuan, informasi tiket, atau kerjasama? Silakan hubungi tim kami melalui formulir di bawah ini.">
+      Perlu bantuan, informasi tiket, atau kerjasama? Silakan hubungi tim kami melalui formulir di bawah ini.
+    </p>
+
+    <div class="btns">
+      <button id="darkModeBtn">Dark Mode</button>
+      <button id="translateBtn">Translate EN</button>
+    </div>
+  </header>
+
+  <div class="container">
+    <h2 class="section-title" data-id="Formulir Kontak">Formulir Kontak</h2>
+
+    <form onsubmit="sendWhatsApp(event)">
+      <label data-id="Masukkan Nama">Masukkan Nama</label>
+      <input type="text" id="nama" required placeholder="Nama lengkap...">
+
+      <label data-id="Masukkan Email">Masukkan Email</label>
+      <input type="email" id="email" required placeholder="example@mail.com">
+
+      <label data-id="Masukkan No HP">Masukkan No HP</label>
+      <input type="tel" id="hp" required placeholder="08xxxxxxxxxx">
+
+      <label data-id="Masukkan Informasi / Kritik / Saran / Aduan">Masukkan Informasi / Kritik / Saran / Aduan</label>
+      <textarea id="pesan" required placeholder="Tulis pesan Anda..."></textarea>
+
+      <button class="btn-submit" type="submit" data-id="Kirim Pesan">Kirim Pesan</button>
+    </form>
+
+    <a href="index.html" class="btn-back" data-id="← Kembali ke Beranda">← Kembali ke Beranda</a>
+  </div>
+
+  <footer>
+    © Museum Kayu & Kriya Ambar Polah 2025. All rights reserved.
+  </footer>
+
+  <script>
+    function sendWhatsApp(event) {
+      event.preventDefault();
+
+      const nama = document.getElementById("nama").value;
+      const email = document.getElementById("email").value;
+      const hp = document.getElementById("hp").value;
+      const pesan = document.getElementById("pesan").value;
+
+      const nomor = "6282342754175";
+
+      const text =
+        `Halo, saya *${nama}*\n` +
+        `Email: ${email}\n` +
+        `No HP: ${hp}\n\n` +
+        `Pesan:\n${pesan}`;
+
+      const url = `https://wa.me/${nomor}?text=${encodeURIComponent(text)}`;
+
+      window.open(url, "_blank");
+
+      setTimeout(() => {
+        window.location.href = "index.html";
+      }, 2500);
+    }
+
+    // DARK MODE
+    const darkModeBtn = document.getElementById("darkModeBtn");
+    darkModeBtn.addEventListener("click", () => {
+      document.body.classList.toggle("dark-mode");
+      darkModeBtn.textContent = document.body.classList.contains("dark-mode")
+        ? "Light Mode" : "Dark Mode";
+    });
+
+    // TRANSLATE
+    const translateBtn = document.getElementById("translateBtn");
+    let isEnglish = false;
+
+    const textMap = {
+      "Hubungi Kami": "Contact Us",
+      "Perlu bantuan, informasi tiket, atau kerjasama? Silakan hubungi tim kami melalui formulir di bawah ini.":
+        "Need help, ticket information, or partnership? Contact our team through the form below.",
+
+      "Formulir Kontak": "Contact Form",
+      "Masukkan Nama": "Enter Name",
+      "Masukkan Email": "Enter Email",
+      "Masukkan No HP": "Enter Phone Number",
+      "Masukkan Informasi / Kritik / Saran / Aduan": "Enter Information / Feedback / Suggestion / Complaint",
+      "Kirim Pesan": "Send Message",
+      "← Kembali ke Beranda": "← Back to Home"
+    };
+
+    translateBtn.addEventListener("click", () => {
+      document.querySelectorAll("[data-id]").forEach(el => {
+        const key = el.getAttribute("data-id");
+        el.textContent = !isEnglish ? (textMap[key] || el.textContent) : key;
+      });
+      isEnglish = !isEnglish;
+      translateBtn.textContent = isEnglish ? "Translate ID" : "Translate EN";
+    });
+  </script>
+
+</body>
+
+</html>
