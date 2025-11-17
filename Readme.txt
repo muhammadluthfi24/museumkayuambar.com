@@ -42,7 +42,5 @@ Semua elemen menggunakan atribut:
 ```
 ### ✔4. Footer Resmi
 
-Sesuai permintaan kamu, menggunakan:
-<footer>
     © Museum Kayu & Kriya Ambar Polah 2025. All rights reserved.
-</footer>
+
