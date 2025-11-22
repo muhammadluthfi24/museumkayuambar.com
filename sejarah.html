@@ -362,30 +362,67 @@
       darkModeBtn.textContent = document.body.classList.contains('dark-mode') ? "Light Mode" : "Dark Mode";
     });
 
-    // Translate ID ↔ EN
-    const textMap = {
-      "Sejarah Lengkap Museum Kayu & Kriya Ambar Polah": "Full History of Ambar Polah Wood & Craft Museum",
-      "Pusat perjalanan panjang pelestarian seni kayu dan kriya Nusantara": "A long journey of wood art and craft preservation in Nusantara",
+    // Semua teks Indonesia → Inggris
+    const translateMap = {
       "Sejarah Singkat": "Brief History",
+      "Tanggal terbit: 12 Februari 2024 • Dibaca: 7288": "Published: 12 February 2024 • Reads: 7288",
       "Asal-usul dan Perkembangan Museum": "Origins and Development of the Museum",
+      "Sebagai kolektor, beliau...": "As a collector, he...",
       "Pokok Sejarah dalam Sorotan": "History Highlights",
-      "Awal Cita-Cita (1986)": "Initial Idea (1986)",
+
+      "Awal Cita-Cita (1986)": "Initial Vision (1986)",
+      "gagasan pendirian museum...": "the initial idea of establishing the museum...",
+
       "Rumah Koleksi Pribadi": "Private Collection House",
-      "Koleksi yang Dihimpun Bertahun-tahun": "Collection Gathered Over Years",
+      "Sebelum menjadi museum...": "Before it became a museum...",
+
+      "Koleksi yang Dihimpun Bertahun-tahun": "Collection Gathered Over the Years",
+      "Sebagai kolektor, beliau mengumpulkan...": "As a collector, he gathered...",
+
       "Terwujudnya Museum (2025)": "Museum Realization (2025)",
+      "Keinginan almarhum akhirnya...": "His vision was finally realized...",
+
       "Timeline Perkembangan": "Development Timeline",
+
+      "1986 – Gagasan Awal Museum": "1986 – Initial Museum Idea",
+      "Alm. Bapak Ambar Polah...": "The late Ambar Polah...",
+
+      "1986–2024 – Proses Pengkoleksian": "1986–2024 – Collection Process",
+      "Penyimpanan dan pengumpulan...": "Storage and collection...",
+
+      "2024 – Tahap Kurasi Koleksi": "2024 – Collection Curation Stage",
+
+      "2025 – Perwujudan Museum": "2025 – Museum Realization",
+
       "Galeri Foto": "Photo Gallery",
-      "← Kembali ke Beranda": "← Back to Home"
     };
-    let isEnglish = false;
-    const translateBtn = document.getElementById('translateBtn');
-    translateBtn.addEventListener('click', () => {
-      document.querySelectorAll('[data-id]').forEach(el => {
-        const key = el.getAttribute('data-id');
-        el.textContent = !isEnglish ? (textMap[key] || el.textContent) : key;
+
+    // Bagian yang TIDAK BOLEH diterjemahkan
+    const skipText = [
+      "Sejarah Lengkap Museum Kayu & Kriya Ambar Polah",
+      "Pusat perjalanan panjang pelestarian seni kayu dan kriya Nusantara"
+    ];
+
+    let eng = false;
+    const btn = document.getElementById("translateBtn");
+
+    btn.addEventListener("click", () => {
+      document.querySelectorAll("[data-id]").forEach(el => {
+        const original = el.getAttribute("data-id");
+
+        // Lewatkan elemen yang tidak boleh diterjemahkan
+        if (skipText.includes(original)) return;
+
+        // Translate
+        if (!eng) {
+          el.textContent = translateMap[original] || original;
+        } else {
+          el.textContent = original;
+        }
       });
-      isEnglish = !isEnglish;
-      translateBtn.textContent = isEnglish ? "Translate ID" : "Translate EN";
+
+      eng = !eng;
+      btn.textContent = eng ? "Translate ID" : "Translate EN";
     });
   </script>
 
